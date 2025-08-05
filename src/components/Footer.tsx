@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="/Web-Logo-Solryn.png" 
+                src="/Web-Icon-Logo.png" 
                 alt="Solryn Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-16 h-16 object-contain"
               />
-              <span className="text-2xl font-bold text-white tracking-tight">Solryn</span>
+               <span className="text-x1 sm:text-3xl font-bold text-white ">Solryn</span>
             </div>
             <p className="text-slate-400 font-light mb-8 max-w-md text-lg leading-relaxed">
               AI Automation for the Real World. Built for teams that want to scale smart, not work harder. We create intelligent automation that feels human and drives real results.

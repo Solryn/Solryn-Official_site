@@ -37,11 +37,11 @@ const Header = () => {
             onClick={() => scrollToSection('hero')}
           >
             <img 
-              src="/Web-Logo-Solryn.png" 
+              src="/Web-Icon-Logo.png" 
               alt="Solryn Logo" 
-              className="w-14 h-14 sm:h-14 sm:w:14 object-contain"
+              className="w-16 h-16 sm:h-16 sm:w-14 object-contain"
             />
-          <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">Solryn</span>
+            <span className="text-x1 sm:text-3xl font-bold text-white ">Solryn</span>
           </div>
 
           {/* Desktop Nav */}
