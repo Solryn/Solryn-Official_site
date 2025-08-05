@@ -17,10 +17,12 @@ import Benefits from './components/Benefits';
 import SocialProof from './components/SocialProof';
 import ServiceSplit from './components/ServiceSplit';
 import About from './components/About';
+import { ModalProvider } from './components/ModalContext';
 
 function App() {
   return (
     <div className="min-h-screen bg-black">
+
       <Header />
       <Hero />
       <NicheSplit />
@@ -36,9 +38,10 @@ function App() {
       <CTA />
       <FAQ />
       <Footer />
-      <ChatbotWidget />
+  <ChatbotWidget />
     </div>
   );
 }
 
 export default App;
+

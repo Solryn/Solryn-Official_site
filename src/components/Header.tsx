@@ -30,7 +30,7 @@ const Header = () => {
           isScrolled ? 'bg-black/80 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-10x3 mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <div
             className="flex items-center gap-4 cursor-pointer"
@@ -41,7 +41,7 @@ const Header = () => {
               alt="Solryn Logo" 
               className="w-16 h-16 sm:h-16 sm:w-14 object-contain"
             />
-            <span className="text-x1 sm:text-3xl font-bold text-white ">Solryn</span>
+            <span className="text-xl sm:text-3xl font-bold text-white">Solryn</span>
           </div>
 
           {/* Desktop Nav */}
@@ -84,12 +84,14 @@ const Header = () => {
         )}
       </header>
 
-      {/* Modal for custom bot */}
-      <LeadModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        title="Get Custom Automation"
-      />
+      {/* Modal — now rendered only when open */}
+      {isModalOpen && (
+        <LeadModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+          title="Get Custom Automation"
+        />
+      )}
     </>
   );
 };

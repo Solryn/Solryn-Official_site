@@ -6,6 +6,7 @@ const Hero = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
+
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#0A0D10' }}>
@@ -78,7 +79,7 @@ const Hero = () => {
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
         title="Watch 60s Demo"
-      />
+          />
     </>
   );
 };
