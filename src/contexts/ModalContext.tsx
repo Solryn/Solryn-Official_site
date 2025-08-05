@@ -37,9 +37,9 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
   return (
     <ModalContext.Provider value={{ openModal, closeModal }}>
       {children}
-      {/* {isOpen && (
+      {isOpen && (
   <LeadModal isOpen={isOpen} title={title} onClose={closeModal} />
-)} */}
+)} 
 
     </ModalContext.Provider>
   );
