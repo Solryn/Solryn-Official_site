@@ -1,11 +1,9 @@
-import React from 'react';
 import { Check, ArrowRight, Star } from 'lucide-react';
-import LeadModal from './LeadModal';
+import { useModal } from '../contexts/ModalContext';
 import { useEffect, useState } from 'react';
 
 const Pricing = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState('');
+  const { openModal } = useModal();
   const [shouldPulse, setShouldPulse] = useState(false);
 
   const plans = [
@@ -72,13 +70,9 @@ const Pricing = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleCTAClick = (title: string) => {
-    setModalTitle(title);
-    setIsModalOpen(true);
-  };
 
   return (
-    <>
+    <div>
       <section id="pricing" className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0A0D10' }}>
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
@@ -142,11 +136,11 @@ const Pricing = () => {
               </div>
 
               <button 
-                onClick={() => handleCTAClick(plan.cta)}
+                onClick={() => openModal(plan.cta)}
                 className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
                   plan.popular
-                    ? `btn-primary ${shouldPulse && plan.name === 'Growth' ? 'animate-pulse' : ''}`
-                    : 'btn-secondary'
+                    ? `bg-gradient-to-r from-cyan-500 to-emerald-500 text-white hover:from-cyan-400 hover:to-emerald-400 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 ${shouldPulse && plan.name === 'Growth' ? 'animate-pulse' : ''}`
+                    : 'bg-black/10 backdrop-blur-sm border border-white/10 text-white hover:border-cyan-500/50 hover:bg-black/20 transform hover:scale-105 hover:shadow-cyan-500/25'
                 }`}
               >
                 <span>{plan.cta}</span>
@@ -183,13 +177,7 @@ const Pricing = () => {
         </div>
       </div>
     </section>
-    
-    <LeadModal 
-      isOpen={isModalOpen} 
-      onClose={() => setIsModalOpen(false)} 
-      title={modalTitle}
-    />
-  </>
+    </div>
   );
 };
 

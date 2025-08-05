@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, Wrench, Rocket } from 'lucide-react';
 
 const HowItWorks = () => {

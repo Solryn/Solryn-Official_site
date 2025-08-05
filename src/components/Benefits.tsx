@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, PhoneOff, Zap, CheckCircle } from 'lucide-react';
 
 const Benefits = () => {
@@ -29,32 +28,6 @@ const Benefits = () => {
     }
   ];
 
-  const colorClasses = {
-    blue: {
-      bg: "bg-blue-600",
-      hover: "group-hover:bg-blue-700",
-      border: "border-blue-100",
-      gradient: "from-blue-50 to-purple-50"
-    },
-    purple: {
-      bg: "bg-purple-600",
-      hover: "group-hover:bg-purple-700",
-      border: "border-purple-100",
-      gradient: "from-purple-50 to-pink-50"
-    },
-    green: {
-      bg: "bg-green-500",
-      hover: "group-hover:bg-green-600",
-      border: "border-green-100",
-      gradient: "from-green-50 to-blue-50"
-    },
-    orange: {
-      bg: "bg-orange-500",
-      hover: "group-hover:bg-orange-600",
-      border: "border-orange-100",
-      gradient: "from-orange-50 to-yellow-50"
-    }
-  };
 
   return (
     <section id="benefits" className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0A0D10' }}>

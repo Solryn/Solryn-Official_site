@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageCircle, User, Bot } from 'lucide-react';
 
 const ChatbotPreview = () => {

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Bot } from 'lucide-react';
-import LeadModal from './LeadModal';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +39,9 @@ const Header = () => {
             <img 
               src="/Web-Icon-Logo.png" 
               alt="Solryn Logo" 
-              className="w-16 h-16 sm:h-16 sm:w-14 object-contain"
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
             />
-            <span className="text-xl sm:text-3xl font-bold text-white">Solryn</span>
+            <span className="text-2xl sm:text-3xl font-bold text-white">Solryn</span>
           </div>
 
           {/* Desktop Nav */}
@@ -50,8 +50,8 @@ const Header = () => {
             <button onClick={() => scrollToSection('pricing')} className="text-slate-300 hover:text-white hover:glow-cyan transition-all duration-300 font-medium">Pricing</button>
             <button onClick={() => scrollToSection('footer')} className="text-slate-300 hover:text-white hover:glow-cyan transition-all duration-300 font-medium">Contact</button>
             <button 
-              onClick={() => setIsModalOpen(true)}
-              className="btn-primary"
+              onClick={() => openModal('Get Custom Automation')}
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
             >
               Get Custom Automation
             </button>
@@ -74,8 +74,8 @@ const Header = () => {
               <button onClick={() => scrollToSection('pricing')} className="block text-slate-300 hover:text-white py-2 transition-colors w-full text-left">Pricing</button>
               <button onClick={() => scrollToSection('footer')} className="block text-slate-300 hover:text-white py-2 transition-colors w-full text-left">Contact</button>
               <button 
-                onClick={() => setIsModalOpen(true)}
-                className="w-full btn-primary mt-4"
+                onClick={() => openModal('Get Custom Automation')}
+                className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 mt-4"
               >
                 Get Custom Automation
               </button>
@@ -83,15 +83,6 @@ const Header = () => {
           </div>
         )}
       </header>
-
-      {/* Modal — now rendered only when open */}
-      {isModalOpen && (
-        <LeadModal 
-          isOpen={isModalOpen} 
-          onClose={() => setIsModalOpen(false)} 
-          title="Get Custom Automation"
-        />
-      )}
     </>
   );
 };

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Bot, Mail, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (

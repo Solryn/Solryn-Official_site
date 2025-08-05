@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, CheckCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 

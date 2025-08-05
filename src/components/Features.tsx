@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bot, MessageSquare, Calendar, Shield, Zap, Globe } from 'lucide-react';
 import { useEffect, useState } from 'react';
 

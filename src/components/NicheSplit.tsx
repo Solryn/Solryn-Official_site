@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Building2, ArrowRight } from 'lucide-react';
 
 const NicheSplit = () => {

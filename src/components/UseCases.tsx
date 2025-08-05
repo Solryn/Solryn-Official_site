@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, Users, Star, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 

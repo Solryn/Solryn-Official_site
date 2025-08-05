@@ -1,4 +1,3 @@
-import React from 'react';
 import { Repeat, FileText, Mail, Phone, Link, Calendar } from 'lucide-react';
 
 const ComingSoon = () => {
