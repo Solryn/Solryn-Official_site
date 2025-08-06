@@ -128,14 +128,20 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
                 value={formData.businessType}
                 onChange={handleChange}
                 required
-                className="w-full bg-black/10 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500/50 transition-colors"
+                className="w-full bg-slate-800 text-white border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
+                style={{
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  appearance: 'none',
+                  backgroundColor: '#000000', // fallback for unsupported Tailwind classes
+                }}
               >
-                <option value="">Select your business type</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Clinic">Clinic</option>
-                <option value="B2B">B2B</option>
-                <option value="Agency">Agency</option>
-                <option value="Other">Other</option>
+                <option value="" disabled hidden>Select your business type</option>
+                <option className="text-white" value="Hotel">Hotel</option>
+                <option className="text-white" value="Clinic">Clinic</option>
+                <option className="text-white" value="B2B">B2B</option>
+                <option className="text-white" value="Agency">Agency</option>
+                <option className="text-white" value="Other">Other</option>
               </select>
             </div>
 
