@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import { useModal } from '../contexts/ModalContext';
 import { useEffect, useState } from 'react';
 
@@ -38,17 +38,28 @@ const CTA = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <div className="glass-morphism rounded-3xl p-12 border border-white/10">
-          <h2 className={`text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight transition-all duration-700 ${
-            isVisible ? 'animate-in fade-in slide-in-from-bottom' : 'opacity-0'
+      <div className="glass-morphism rounded-3xl p-12 lg:p-16 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
+           {/* Badge */}
+           <div className={`inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-8 transition-all duration-700 ${
+            isVisible ? 'animate-fade-in-up' : 'opacity-0'
           }`}>
-            Ready to Automate Your Business?
+            <Sparkles className="h-4 w-4 text-cyan-400" />
+            <span>Ready to Transform Your Business?</span>
+          </div>
+
+          {/* Main Heading */}
+          <h2 className={`font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight transition-all duration-700 ${
+            isVisible ? 'animate-fade-in-up' : 'opacity-0'
+          }`} style={{ animationDelay: '0.1s' }}>
+            Ready to Automate
+            <span className="block text-gradient-premium mt-2">Your Business?</span>
           </h2>
           
-          <p className={`text-xl text-slate-400 font-light mb-10 max-w-2xl mx-auto transition-all duration-700 ${
-            isVisible ? 'animate-in fade-in slide-in-from-bottom' : 'opacity-0'
+          {/* Subheading */}
+          <p className={`text-xl sm:text-2xl text-slate-400 font-light mb-12 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${
+            isVisible ? 'animate-fade-in-up' : 'opacity-0'
           }`} style={{ animationDelay: '0.2s' }}>
-            Stop doing manual work. Start scaling with smart automation.
+            Stop doing manual work. Start scaling with smart automation that works 24/7.
           </p>
           
           <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center transition-all duration-700 ${

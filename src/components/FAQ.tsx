@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [visibleFaqs, setVisibleFaqs] = useState<number[]>([]);
 
   const faqs = [
     {
       question: "What Do You mean by Automation Blueprint?",
-      answer: "We analyze your business workflows and show you exactly how AI can handle repetitive tasks. It’s a free, customized plan for saving time and growing revenue."
+      answer: "We analyze your business workflows and show you exactly how AI can handle repetitive tasks. It's a free, customized plan for saving time and growing revenue."
     },
     {
       question: "What can you automate for my business?",
@@ -25,11 +26,31 @@ const FAQ = () => {
       question: "What tools do you use?",
       answer: "OpenAI, Make, Voiceflow, Google Workspace, Vapi, Notion, Zapier, Bland and any tools your business already uses."
     }
-     
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setTimeout(() => {
+              setVisibleFaqs(prev => [...prev, index]);
+            }, index * 100);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const elements = document.querySelectorAll('.faq-item');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0A0D10' }}>
+    <section className="relative py-20 overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24" style={{ backgroundColor: '#0A0D10' }}>
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         <div
@@ -42,13 +63,20 @@ const FAQ = () => {
         ></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-            Frequently Asked Questions
+          <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
+            <HelpCircle className="h-4 w-4 text-cyan-400" />
+            <span>Got Questions?</span>
+          </div>
+          
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+            Frequently Asked
+            <span className="block text-gradient-premium mt-2">Questions</span>
           </h2>
-          <p className="text-xl text-slate-400 font-light">
-            Everything you need to know about Solryn AI chatbots.
+          
+          <p className="text-lg sm:text-xl text-slate-400 leading-relaxed">
+            Everything you need to know about Solryn AI automation.
           </p>
         </div>
 
@@ -56,31 +84,52 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-black/10 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-cyan-500/50 transition-all duration-300"
+              className={`faq-item glass-morphism rounded-2xl border border-white/10 overflow-hidden hover:border-cyan-500/30 transition-all duration-500 animate-on-scroll ${
+                visibleFaqs.includes(index) ? 'animate-in' : ''
+              }`}
+              data-index={index}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <button
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-800/20 transition-colors duration-300"
+                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300 group"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <h3 className="text-lg font-semibold text-white pr-4">
+                <h3 className="font-display text-lg font-semibold text-white pr-4 group-hover:text-cyan-400 transition-colors duration-300">
                   {faq.question}
                 </h3>
-                {openIndex === index ? (
-                  <ChevronUp className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-slate-400 flex-shrink-0" />
-                )}
+                <div className="flex-shrink-0">
+                  {openIndex === index ? (
+                    <ChevronUp className="h-5 w-5 text-cyan-400 transition-transform duration-300" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 text-slate-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                  )}
+                </div>
               </button>
 
-              {openIndex === index && (
-                <div className="px-8 pb-6">
-                  <p className="text-slate-300 leading-relaxed">
+              <div className={`transition-all duration-500 ease-in-out ${
+                openIndex === index 
+                  ? 'max-h-96 opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden`}>
+                <div className="px-8 pb-6 border-t border-white/10">
+                  <p className="text-slate-300 leading-relaxed pt-4 text-lg">
                     {faq.answer}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="glass-morphism rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+            <h3 className="font-display text-2xl font-bold text-white mb-4">Still have questions?</h3>
+            <p className="text-slate-400 mb-6">Get in touch with our team for personalized answers.</p>
+            <button className="btn-premium">
+              Contact Our Team
+            </button>
+          </div>
         </div>
       </div>
     </section>
