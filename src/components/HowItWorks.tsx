@@ -161,21 +161,96 @@ const HowItWorks = () => {
           })}
         </div>
 
+        {/* Workflow Images Section */}
+        <div className="max-w-6xl mx-auto space-y-20 mt-10">
+
+         {/* Visual Automation Demos */}
+          <div className="mt-32 max-w-7xl mx-auto space-y-28">
+
+          {/* Section Heading */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
+              <Rocket className="h-4 w-4 text-cyan-400" />
+              <span>Live Workflows</span>
+            </div>
+
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+              See It in Action
+            </h2>
+
+            <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              These are the same automation workflows we use internally — from intelligent email outreach to chatbot-based lead capture.
+            </p>
+          </div>
+
+          {/* Email Workflow */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
+              <img
+                src="/Email-Workflow.png"
+                alt="Email Workflow"
+                className="rounded-xl shadow-2xl w-full opacity-95"
+              />
+            </div>
+            <div className="text-left space-y-6">
+              <h3 className="text-3xl font-bold text-white">End-to-End Email Automation</h3>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                We use AI to generate highly personalized cold emails at scale — mapped into custom workflows using Make.com, OpenAI, and Google Sheets.
+              </p>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                It scrapes the leads site, social profile and detect the pin-points that the lead face and generate personalized emails. Every interaction is logged, tracked, and optimized. This is not just automation — it’s systemized intelligence designed to convert leads into clients.
+              </p>
+            </div>
+          </div>
+
+          {/* Voiceflow + Chatbot Demo */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
+                <img
+                  src="/Voiceflow-Workflow.png"
+                  alt="Voiceflow Workflow"
+                  className="rounded-xl shadow-2xl w-full opacity-30"
+                />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <img
+                    src="/Chatbot Web-Demo1 (2).gif"
+                    alt="Chat Demo"
+                    className="w-60 md:w-50 max-w-md rounded-xl shadow-2xl border border-cyan-400/40 animate-fade-in"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="text-left space-y-6">
+              <h3 className="text-3xl font-bold text-white">Conversational AI Assistants</h3>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                From lead qualification to appointment booking, our Voiceflow-powered AI agents engage your visitors in natural, human-like conversations.
+              </p>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                These aren’t just bots — they’re extensions of your sales and support teams, available 24/7 across web, mobile, and voice.
+              </p>
+            </div>
+          </div>
+
+          </div>
+
         {/* Bottom Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20">
-          <div className="text-center glass-morphism rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+          <div className="text-center glass-morphism rounded-2xl p-3 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
             <div className="text-3xl font-bold text-white mb-2">72hrs</div>
             <div className="text-slate-400">Average deployment time</div>
           </div>
-          <div className="text-center glass-morphism rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+          <div className="text-center glass-morphism rounded-2xl p-3 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
             <div className="text-3xl font-bold text-white mb-2">24/7</div>
             <div className="text-slate-400">Ongoing support</div>
           </div>
-          <div className="text-center glass-morphism rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+          <div className="text-center glass-morphism rounded-2xl p-3 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
             <div className="text-3xl font-bold text-white mb-2">100%</div>
             <div className="text-slate-400">Custom built</div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

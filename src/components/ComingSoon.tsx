@@ -63,7 +63,7 @@ const ComingSoon = () => {
     return () => observer.disconnect();
   }, []);
 
-  function openModal(arg0: string): void {
+  function openModal(_arg0: string): void {
     throw new Error('Function not implemented.');
   }
 

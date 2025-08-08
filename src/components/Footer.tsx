@@ -75,7 +75,9 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="text-white font-medium">Email us</div>
-                  <div className="text-slate-400">atharv@solrynhq.com</div>
+                  <a href="mailto:atharv@solrynhq.com" className="text-slate-400 hover:text-cyan-400 hover:underline transition-colors duration-300">
+                    atharv@solrynhq.com
+                  </a>
                 </div>
               </div>
 
