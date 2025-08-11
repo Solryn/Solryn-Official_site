@@ -237,13 +237,13 @@ const HowItWorks = () => {
                 <br></br><br></br>Trusted by teams at
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-5 items-center justify-items-center">
-              {['/icons8-chatgpt-50.png', '/make.png', '/n8n.png', '/Bolt.png', '/Voiceflow.png', '/Google_Workspace_Logo.svg.png', '/Sheet.png'].map((logo, idx) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 items-center justify-items-center">
+              {['/icons8-chatgpt-50.png', '/make.webp', '/n8n.png', '/Bolt.png', '/Voiceflow.png', '/Google_Workspace_Logo.svg.png', '/Sheet.png'].map((logo, idx) => (
                 <img
                   key={idx}
                   src={logo}
                   alt={`Logo ${idx + 1}`}
-                  className="h-8 sm:h-10 opacity-90 hover:opacity-100 transition-all duration-300 "
+                  className="h-5 sm:h-10 opacity-90 hover:opacity-100 transition-all duration-300 "
                 />
               ))}
             </div>
