@@ -222,6 +222,9 @@ const Hero = () => {
             <img src="/icons8-chatgpt-50.png" alt="OpenAI" className="h-6 sm:h-8 lg:h-6 object-contain" />
             <img src="/make.webp" alt="Make.com" className="h-5 sm:h-8 lg:h-5 object-contain" />
             <img src="/n8n.png" alt="n8n" className="h-6 sm:h-8 lg:h-6 object-contain" />
+            <img src="/Apify.svg" alt="Apify" className="h-6 sm:h-8 lg:h-6 object-contain" />
+            <img src="/Supabase.png" alt="Supabase" className="h-6 sm:h-8 lg:h-6 object-contain" />
+            <img src="/Linkedin.png" alt="Linkedin" className="h-10 sm:h-8 lg:h-10 object-contain" />
             <img src="/Google_Workspace_Logo.svg.png" alt="Google Workspace" className="h-6 sm:h-8 lg:h-5 object-contain" />
             <img src="/Sheet.png" alt="Google Sheets" className="h-6 sm:h-8 lg:h-7 object-contain" />
             <img src="/Calendly.png" alt="Calendly" className="h-6 sm:h-8 lg:h-8 object-contain" />
