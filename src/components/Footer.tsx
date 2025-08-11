@@ -99,6 +99,16 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* Back to Top */}
+        <div className="flex justify-center mb-6">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            <ArrowRight className="h-4 w-4 rotate-[-90deg]" />
+            <span>Back to Top</span>
+          </button>
+        </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">

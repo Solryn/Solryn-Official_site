@@ -218,7 +218,8 @@ const Hero = () => {
                 <br></br><br></br>Trusted by teams at
               </p>
             </div>
-          <div className="flex space-x-8 sm:space-x-12 animate-scroll hover:[animation-play-state:paused] px-6 sm:px-12 md:px-16 lg:px-24">
+          <div className="flex space-x-8 sm:space-x-12 animate-scroll hover:[animation-play-state:paused] 
+                 px-6 sm:px-12 md:px-16 lg:px-0 max-w-[75%] mx-auto">
             <img src="/icons8-chatgpt-50.png" alt="OpenAI" className="h-6 sm:h-8 lg:h-6 object-contain" />
             <img src="/make.webp" alt="Make.com" className="h-5 sm:h-8 lg:h-5 object-contain" />
             <img src="/n8n.png" alt="n8n" className="h-6 sm:h-8 lg:h-6 object-contain" />
