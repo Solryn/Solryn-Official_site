@@ -67,18 +67,24 @@ const CTA = () => {
           }`} style={{ animationDelay: '0.4s' }}>
             <button 
               onClick={() => openModal('Book Strategy Call')}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex items-center space-x-3"
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex flex-col items-center"
             >
-              <ArrowRight className="h-5 w-5" />
-              <span>Book Strategy Call</span>
+              <div className="flex items-center space-x-3">
+                <ArrowRight className="h-5 w-5" />
+                <span>Book Strategy Call</span>
+              </div>
+              <span className="text-xs text-white/80 mt-1">Setup in 72hrs</span>
             </button>
             
             <button 
               onClick={() => openModal('Get Free Automation Blueprint')}
-              className="bg-black/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:border-cyan-500/50 hover:bg-black/20 transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25 flex items-center space-x-3"
+              className="bg-black/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:border-cyan-500/50 hover:bg-black/20 transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25 flex flex-col items-center"
             >
-              <Play className="h-5 w-5" />
-              <span>Get Free Automation Blueprint</span>
+              <div className="flex items-center space-x-3">
+                <Play className="h-5 w-5" />
+                <span>Get Free Automation Blueprint</span>
+              </div>
+              <span className="text-xs text-white/70 mt-1">No credit card required</span>
             </button>
           </div>
         </div>

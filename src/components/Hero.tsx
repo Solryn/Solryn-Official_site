@@ -61,25 +61,31 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-700 ${
+              className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start transition-all duration-700 ${
                 isVisible ? 'animate-fade-in-up' : 'opacity-0'
               }`}
               style={{ animationDelay: '0.3s' }}
             >
               <button
                 onClick={() => openModal('Get Custom Automation')}
-                className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center space-x-3 group"
+                className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex flex-col items-center justify-center group"
               >
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                <span>Get Custom Automation</span>
+                <div className="flex items-center space-x-3">
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <span>Get Custom Automation</span>
+                </div>
+                <span className="text-xs text-white/80 mt-1">Setup in 72hrs</span>
               </button>
 
               <button
                 onClick={() => openModal('Get Free Automation Blueprint')}
-                className="bg-white/10 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-md flex items-center justify-center space-x-3 group"
+                className="bg-white/10 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-md flex flex-col items-center justify-center group"
               >
-                <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>Get Free Blueprint</span>
+                <div className="flex items-center space-x-3">
+                  <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <span>Get Free Blueprint</span>
+                </div>
+                <span className="text-xs text-white/70 mt-1">No credit card required</span>
               </button>
             </div>
 

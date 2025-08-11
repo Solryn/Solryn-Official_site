@@ -89,38 +89,38 @@ const WhySolryn = () => {
         {/* Bottom Feature Highlight */}
         <div className="text-center">
           <div className="glass-morphism rounded-3xl p-8 border border-white/10 max-w-4xl mx-auto hover:border-cyan-500/30 transition-all duration-500">
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 rounded-3xl flex items-center justify-center">
-                  <Clock className="h-8 w-8 text-cyan-400" />
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 rounded-2xl flex items-center justify-center">
+                  <Clock className="h-6 w-6 text-cyan-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-display text-2xl font-bold text-white">24/7</div>
-                  <div className="text-slate-400">Always Available</div>
+                  <div className="font-display text-lg font-bold text-white">24/7</div>
+                  <div className="text-slate-400 text-sm">Always Available</div>
                 </div>
               </div>
 
-              <div className="w-px h-16 bg-white/10 hidden sm:block"></div>
+              <div className="w-px h-12 bg-white/10 hidden sm:block"></div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500/20 to-purple-500/20 rounded-3xl flex items-center justify-center">
-                  <Zap className="h-8 w-8 text-emerald-400" />
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-emerald-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-display text-2xl font-bold text-white">Instant</div>
-                  <div className="text-slate-400">Response Time</div>
+                  <div className="font-display text-lg font-bold text-white">Instant</div>
+                  <div className="text-slate-400 text-sm">Response Time</div>
                 </div>
               </div>
 
-              <div className="w-px h-16 bg-white/10 hidden sm:block"></div>
+              <div className="w-px h-12 bg-white/10 hidden sm:block"></div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl flex items-center justify-center">
-                  <CheckCircle className="h-8 w-8 text-purple-400" />
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center">
+                  <CheckCircle className="h-6 w-6 text-purple-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-display text-2xl font-bold text-white">Never</div>
-                  <div className="text-slate-400">Miss a Lead</div>
+                  <div className="font-display text-lg font-bold text-white">Never</div>
+                  <div className="text-slate-400 text-sm">Miss a Lead</div>
                 </div>
               </div>
             </div>

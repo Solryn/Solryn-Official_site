@@ -7,22 +7,22 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: Search,
-      title: "We Understand Your Needs",
-      description: "Deep dive into your current processes, pain points, and automation opportunities to design the perfect solution.",
+      title: "Understand & Identify",
+      description: "We dive deep into your operations to pinpoint automation opportunities that will have the highest impact on efficiency and ROI.",
       number: "01",
       delay: "0s"
     },
     {
       icon: Wrench,
-      title: "Build Your AI Agent",
-      description: "Custom development using Voiceflow, Make, and OpenAI to create automation that fits your exact workflow.",
+      title: "Design & Build",
+      description: "Using cutting-edge tools like Voiceflow, Make, and OpenAI, we create tailored AI workflows that integrate seamlessly with your existing systems.",
       number: "02",
       delay: "0.2s"
     },
     {
       icon: Rocket,
-      title: "Test, Deploy, Scale",
-      description: "Thorough testing, seamless deployment, and ongoing optimization to ensure maximum ROI and performance.",
+      title: "Launch & Optimize",
+      description: "We deploy your automation in as little as 72 hours, monitor performance in real time, and fine-tune for even better results as you grow.",
       number: "03",
       delay: "0.4s"
     }
@@ -135,7 +135,7 @@ const HowItWorks = () => {
               >
                 <div className="flex-shrink-0">
                   <div className="relative">
-                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl">
+                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl animate-on-scroll">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
                     <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
@@ -143,7 +143,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
                   {index < steps.length - 1 && (
-                    <div className="w-0.5 h-16 bg-gradient-to-b from-cyan-500 to-emerald-500 mx-auto mt-4 opacity-30"></div>
+                    <div className="w-0.5 h-16 bg-gradient-to-b from-cyan-500 to-emerald-500 mx-auto mt-4 opacity-50"></div>
                   )}
                 </div>
                 
@@ -201,7 +201,7 @@ const HowItWorks = () => {
                 It scrapes the leads site, social profile and detect the pin-points that the lead face and generate personalized emails. Every interaction is logged, tracked, and optimized. This is not just automation — it’s systemized intelligence designed to convert leads into clients.
               </p>
             </div>
-          </div>
+          </div><br></br><br></br>
 
           {/* Voiceflow + Chatbot Demo */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -216,8 +216,8 @@ const HowItWorks = () => {
                   <img
                     src="/Chatbot Web-Demo1 (2).gif"
                     alt="Chat Demo"
-                    className="w-60 md:w-50 max-w-md rounded-xl shadow-2xl border border-cyan-400/40 animate-fade-in"
-                  />
+                    className="w-50 md:w-50 rounded-xl shadow-2xl border border-cyan-400/40 animate-fade-in"
+                  /><br></br><br></br>
                 </div>
               </div>
             </div>
