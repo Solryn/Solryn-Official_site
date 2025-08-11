@@ -230,26 +230,6 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Trusted By Section */}
-          <section className="py-12 px-6 sm:px-12 lg:px-24 bg-transparent">
-            <div className="text-center mb-8">
-              <p className="text-slate-400 text-sm uppercase tracking-widest">
-                <br></br><br></br>Trusted by teams at
-              </p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 items-center justify-items-center">
-              {['/icons8-chatgpt-50.png', '/make.webp', '/n8n.png', '/Bolt.png', '/Voiceflow.png', '/Google_Workspace_Logo.svg.png', '/Sheet.png'].map((logo, idx) => (
-                <img
-                  key={idx}
-                  src={logo}
-                  alt={`Logo ${idx + 1}`}
-                  className="h-5 sm:h-10 opacity-90 hover:opacity-100 transition-all duration-300 "
-                />
-              ))}
-            </div>
-            
-              </section>
-
         {/* Bottom Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20">
           <div className="text-center glass-morphism rounded-2xl p-3 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
