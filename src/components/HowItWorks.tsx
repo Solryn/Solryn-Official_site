@@ -98,8 +98,8 @@ const HowItWorks = () => {
                   style={{ animationDelay: step.delay }}
                 >
                   <div className="relative mb-8">
-                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-300 shadow-2xl">
-                      <Icon className="h-10 w-10 text-white" />
+                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50 hover:scale-105">
+                      <Icon className="h-10 w-10 text-white transition-all duration-300 group-hover:text-cyan-300" />
                     </div>
                     <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
                       {step.number}
@@ -135,8 +135,8 @@ const HowItWorks = () => {
               >
                 <div className="flex-shrink-0">
                   <div className="relative">
-                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl animate-on-scroll">
-                      <Icon className="h-8 w-8 text-white" />
+                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300 hover:shadow-cyan-500/50 hover:scale-105">
+                      <Icon className="h-8 w-8 text-white transition-all duration-300" />
                     </div>
                     <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
                       {step.number}
@@ -161,14 +161,10 @@ const HowItWorks = () => {
           })}
         </div>
 
-        {/* Workflow Images Section */}
-        <div className="max-w-6xl mx-auto space-y-20 mt-10">
-
-         {/* Visual Automation Demos */}
-          <div className="mt-32 max-w-7xl mx-auto space-y-28">
-
-          {/* Section Heading */}
-          <div className="text-center mb-12">
+        {/* Workflow Section */}
+        <div className="max-w-6xl mx-auto space-y-20 mt-10"><br></br>
+           {/* Section Heading */}
+           <div className="text-center mb-12">
             <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
               <Rocket className="h-4 w-4 text-cyan-400" />
               <span>Live Workflows</span>
@@ -182,7 +178,6 @@ const HowItWorks = () => {
               These are the same automation workflows we use internally — from intelligent email outreach to chatbot-based lead capture.
             </p>
           </div>
-
           {/* Email Workflow */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
@@ -198,42 +193,62 @@ const HowItWorks = () => {
                 We use AI to generate highly personalized cold emails at scale — mapped into custom workflows using Make.com, OpenAI, and Google Sheets.
               </p>
               <p className="text-slate-400 text-lg leading-relaxed">
-                It scrapes the leads site, social profile and detect the pin-points that the lead face and generate personalized emails. Every interaction is logged, tracked, and optimized. This is not just automation — it’s systemized intelligence designed to convert leads into clients.
+                It scrapes the lead’s site, social profiles, and detects pain points to generate personalized outreach. Every interaction is tracked, analyzed, and optimized for conversions.
               </p>
             </div>
-          </div><br></br><br></br>
+          </div>
 
           {/* Voiceflow + Chatbot Demo */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
-                <img
-                  src="/Voiceflow-Workflow.png"
-                  alt="Voiceflow Workflow"
-                  className="rounded-xl shadow-2xl w-full opacity-30"
-                />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
                   <img
-                    src="/Chatbot Web-Demo1 (2).gif"
-                    alt="Chat Demo"
-                    className="w-50 md:w-50 rounded-xl shadow-2xl border border-cyan-400/40 animate-fade-in"
-                  /><br></br><br></br>
+                    src="/Voiceflow-Workflow.png"
+                    alt="Voiceflow Workflow"
+                    className="rounded-xl shadow-2xl w-full opacity-30"
+                  />
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 sm:px-4">
+                    <img
+                      src="/Chatbot Web-Demo1 (2).gif"
+                      alt="Chat Demo"
+                      className="w-52 sm:w-64 md:w-72 lg:w-80 rounded-xl shadow-2xl border-4 border-cyan-400/40 hover:shadow-cyan-500/50 transition-all duration-500"
+                    />
+                  </div>
                 </div>
+                {/* Extra spacing below GIF to prevent overlap */}
+                <div className="mt-8 lg:mt-12"></div>
+              </div>
+              <div className="text-left space-y-6">
+                <h3 className="text-3xl font-bold text-white">Conversational AI Assistants</h3>
+                <p className="text-slate-400 text-lg leading-relaxed">
+                  From lead qualification to appointment booking, our Voiceflow-powered AI agents engage visitors in natural, human-like conversations.
+                </p>
+                <p className="text-slate-400 text-lg leading-relaxed">
+                  These aren’t just bots — they’re 24/7 sales and support assistants, built to convert and retain customers.
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="text-left space-y-6">
-              <h3 className="text-3xl font-bold text-white">Conversational AI Assistants</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">
-                From lead qualification to appointment booking, our Voiceflow-powered AI agents engage your visitors in natural, human-like conversations.
-              </p>
-              <p className="text-slate-400 text-lg leading-relaxed">
-                These aren’t just bots — they’re extensions of your sales and support teams, available 24/7 across web, mobile, and voice.
+          {/* Trusted By Section */}
+          {/*<section className="py-12 px-6 sm:px-12 lg:px-24 bg-transparent">
+            <div className="text-center mb-8">
+              <p className="text-slate-400 text-sm uppercase tracking-widest">
+                Trusted by teams at
               </p>
             </div>
-          </div>
-
-          </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">
+              {['/logo1.png', '/logo2.png', '/logo3.png', '/logo4.png', '/logo5.png'].map((logo, idx) => (
+                <img
+                  key={idx}
+                  src={logo}
+                  alt={`Logo ${idx + 1}`}
+                  className="h-8 sm:h-10 opacity-70 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                />
+              ))}
+            </div>
+            </div>
+              </section>*/}
 
         {/* Bottom Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20">
@@ -250,7 +265,6 @@ const HowItWorks = () => {
             <div className="text-slate-400">Custom built</div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

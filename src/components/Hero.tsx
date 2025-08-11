@@ -11,7 +11,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24" style={{ backgroundColor: '#0A0D10' }}>
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24"
+      style={{ backgroundColor: '#0A0D10' }}
+    >
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         <div
@@ -26,26 +29,37 @@ const Hero = () => {
 
       {/* Floating Orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse z-0"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse z-0" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/5 to-emerald-500/5 rounded-full blur-3xl animate-pulse z-0" style={{ animationDelay: '1s' }}></div>
+      <div
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse z-0"
+        style={{ animationDelay: '2s' }}
+      ></div>
+      <div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/5 to-emerald-500/5 rounded-full blur-3xl animate-pulse z-0"
+        style={{ animationDelay: '1s' }}
+      ></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Column - Content */}
-          <div className="text-center lg:text-left space-y-8">
+          <div className="text-center lg:text-left space-y-8 pt-24 sm:pt-0"> {/* Added pt-24 for mobile */}
             {/* Badge */}
-            <div className={`inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 transition-all duration-700 ${
-              isVisible ? 'animate-fade-in-up' : 'opacity-0'
-            }`}>
+            <div
+              className={`inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 transition-all duration-700 ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
+            >
               <Sparkles className="h-4 w-4 text-cyan-400" />
               <span>AI Automation That Actually Works</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className={`font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight transition-all duration-700 ${
-              isVisible ? 'animate-fade-in-up' : 'opacity-0'
-            }`} style={{ animationDelay: '0.1s' }}>
+            <h1
+              className={`font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight transition-all duration-700 ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: '0.1s' }}
+            >
               Turn Manual Work
               <span className="block text-gradient-premium mt-2">
                 into Automated Wins
@@ -53,10 +67,14 @@ const Hero = () => {
             </h1>
 
             {/* Subheading */}
-            <p className={`text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed transition-all duration-700 ${
-              isVisible ? 'animate-fade-in-up' : 'opacity-0'
-            }`} style={{ animationDelay: '0.2s' }}>
-              Solryn builds AI-powered systems that replace repetitive tasks — from customer support to email outreach. Deploy automation that works 24/7, boosts productivity, and scales with your business.
+            <p
+              className={`text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed mx-auto lg:mx-0 transition-all duration-700 ${
+                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: '0.2s' }}
+            >
+              Solryn builds AI-powered systems that replace repetitive tasks — from customer support to email outreach.
+              Deploy automation that works 24/7, boosts productivity, and scales with your business.
             </p>
 
             {/* CTA Buttons */}
@@ -88,40 +106,18 @@ const Hero = () => {
                 <span className="text-xs text-white/70 mt-1">No credit card required</span>
               </button>
             </div>
-
-
-            {/* Social Proof */}
-            {/*<div className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-8 pt-8 transition-all duration-700 ${
-              isVisible ? 'animate-fade-in-up' : 'opacity-0'
-            }`} style={{ animationDelay: '0.4s' }}>
-              <div className="flex items-center space-x-2">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full border-2 border-slate-800"></div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full border-2 border-slate-800"></div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-2 border-slate-800"></div>
-                </div>
-                <span className="text-sm text-slate-400">Trusted by 100+ businesses</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-sm text-slate-400">4.9/5 rating</span>
-              </div>
-            </div>*/}
           </div>
 
           {/* Right Column - Visual */}
-          <div className={`relative transition-all duration-1000 ${
-            isVisible ? 'animate-fade-in-up' : 'opacity-0'
-          }`} style={{ animationDelay: '0.5s' }}>
+          <div
+            className={`relative transition-all duration-1000 ${
+              isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
+            style={{ animationDelay: '0.5s' }}
+          >
             <div className="relative">
               {/* Main Card */}
-              <div className="glass-morphism rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 float-slow">
+              <div className="glass-morphism rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 float-slow max-w-xs sm:max-w-none mx-auto">
                 <div className="space-y-6">
                   {/* Header */}
                   <div className="flex items-center justify-between">
@@ -133,7 +129,7 @@ const Hero = () => {
                     <div className="text-xs text-slate-400">AI Dashboard</div>
                   </div>
 
-                  {/* Content */}
+                  {/* Bars */}
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
@@ -201,8 +197,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      {/* Scroll Indicator - Hide on Mobile */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden lg:flex">
         <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center animate-pulse">
           <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce"></div>
         </div>
