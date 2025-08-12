@@ -16,39 +16,44 @@ const Hero = () => {
       {/* HERO SECTION */}
       <section
         className="relative min-h-screen flex items-center overflow-visible"
-        style={{ backgroundColor: '#0A0D10', overflowY: 'auto' }} // allow scrolling
+        style={{ backgroundColor: '#0A0D10', overflowY: 'auto' }}
       >
         {/* Text BEHIND spline */}
         <div
-          className="absolute z-10 text-white select-none"
+          className={`absolute z-10 text-white select-none 
+            text-center md:text-left`} // mobile center, desktop left
           style={{
-            top: '84%', // adjust to move up/down relative to buttons
-            left: '8%', // matches button alignment
-            transform: 'translateY(-120%)', // moves text above buttons
+            top: '84%',
+            left: '8%',
+            right: '8%',
+            transform: 'translateY(-120%)',
           }}
         >
           <div
             className={`inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
+            style={{
+              justifyContent: 'center', // center badge in mobile
+            }}
           >
             <Sparkles className="h-4 w-4 text-cyan-400" />
             <span>AI Automation That Actually Works</span>
-          </div><br></br>
+          </div>
 
           <h1
             className={`mt-7 font-display text-4xl sm:text-4xl lg:text-5xl xl:text-7xl font-extrabold leading-tight tracking-tight ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
-            Turn Manual <br></br>Work
-            <span className="block text-gradient-premium mt-2 space-y-4">
-              into Automated <br></br>Wins<br></br>
+            Turn Manual <br /> Work
+            <span className="block text-gradient-premium mt-2">
+              into Automated <br /> Wins
             </span>
           </h1>
 
           <p
-            className={`mt-7 text-sm sm:text-base md:text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed ${
+            className={`mt-7 text-sm sm:text-base md:text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed mx-auto md:mx-0 ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -58,30 +63,28 @@ const Hero = () => {
           </p>
         </div>
 
-    
-
-        {/* Spline IN FRONT */}
-        <div className="absolute inset-0 z-20 pointer-events-none">
-        <div className="w-full h-full">
+        {/* Spline only on desktop */}
+        <div className="absolute inset-0 z-20 pointer-events-none hidden md:block">
           <Spline
             scene="https://prod.spline.design/41OTHiR3KikDixJb/scene.splinecode"
             style={{
               width: '100%',
               height: '100%',
               background: 'transparent',
-              pointerEvents: 'auto', // spline is still interactive
+              pointerEvents: 'auto',
             }}
           />
         </div>
-      </div>
 
         {/* Buttons in FRONT */}
-        {/* Buttons - on top of spline */}
         <div
-          className={`absolute z-30 flex flex-col sm:flex-row gap-3 sm:gap-4`}
+          className={`absolute z-30 flex flex-col sm:flex-row gap-3 sm:gap-4 
+            items-center md:items-start`} // center in mobile
           style={{
-            top: '76%',   // adjust this to move up/down
-            left: '8%',   // adjust this to move left/right
+            top: '76%',
+            left: '8%',
+            right: '8%',
+            justifyContent: 'center',
           }}
         >
           <button
@@ -108,8 +111,6 @@ const Hero = () => {
             </span>
           </button>
         </div>
-
-
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 hidden lg:flex">
