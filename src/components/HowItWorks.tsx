@@ -52,7 +52,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="relative py-20 overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24" style={{ backgroundColor: '#0A0D10' }}>
       {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-5 pointer-events-none z-0 pt-4 sm:pt-0">
         <div
           className="absolute inset-0"
           style={{
@@ -98,7 +98,7 @@ const HowItWorks = () => {
                   style={{ animationDelay: step.delay }}
                 >
                   <div className="relative mb-8">
-                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50 hover:scale-105">
+                    <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 hover:scale-[1.02]">
                       <Icon className="h-10 w-10 text-white transition-all duration-300 group-hover:text-cyan-300" />
                     </div>
                     <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
@@ -210,7 +210,7 @@ const HowItWorks = () => {
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 sm:px-4">
                     <img
                       src="/Chatbot Web-Demo1 (2).gif"
-                      alt="Chat Demo"
+                      alt="Workflow: how Solryn automates a support request"
                       className="w-52 sm:w-64 md:w-72 lg:w-80 rounded-xl shadow-2xl border-4 border-cyan-400/40 hover:shadow-cyan-500/50 transition-all duration-500"
                     />
                   </div>
