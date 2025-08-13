@@ -40,6 +40,13 @@ const Hero = () => {
             <Sparkles className="h-4 w-4 text-cyan-400" />
             <span>AI Automation That Actually Works</span>
           </div>
+          <style>{`
+          @media (max-width: 768px) {
+            div[style*="AI Automation That Actually Works"] {
+              margin-top: -8px !important; /* pull label up on mobile */
+            }
+          }
+        `}</style>
 
           <h1
             className={`mt-7 font-display text-4xl sm:text-4xl lg:text-5xl xl:text-7xl font-extrabold leading-tight tracking-tight ${
@@ -79,12 +86,11 @@ const Hero = () => {
         {/* Buttons in FRONT */}
         <div
           className={`absolute z-30 flex flex-col sm:flex-row gap-3 sm:gap-4 
-            items-center md:items-start`} // center in mobile
+            items-center md:items-left`} // center in mobile
           style={{
             top: '76%',
             left: '8%',
-            right: '8%',
-            justifyContent: 'center',
+            
           }}
         >
           <button
@@ -111,6 +117,22 @@ const Hero = () => {
             </span>
           </button>
         </div>
+        <style >{`
+          /* Mobile only adjustments */
+          @media (max-width: 768px) {
+            /* Move label up slightly */
+            .absolute.z-10.text-white.select-none > div {
+              margin-top: 240px;
+            }
+
+            /* Center buttons on mobile */
+            .absolute.z-30.flex {
+              left: 42% !important;
+              transform: translateX(-36%);
+              margin-top: -20px;
+            }
+          }
+        `}</style>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 hidden lg:flex">
