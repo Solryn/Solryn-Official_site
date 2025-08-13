@@ -6,9 +6,10 @@ interface LeadModalProps {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
+  source?: string;
 }
 
-const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get Your Custom Bot" }) => {
+const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get Your Custom Bot", source = "unknown" }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,7 +33,8 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
             Email: formData.email,
             Business_type: formData.businessType,
             Domain: formData.domain,
-            Description: formData.description
+            Description: formData.description,
+            Source: source // NEW
           }
         ]);
 
