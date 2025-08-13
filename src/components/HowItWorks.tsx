@@ -180,7 +180,7 @@ const HowItWorks = () => {
           </div>
           {/* Email Workflow */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
+            <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 mb-6">
               <img
                 src="/Email-Workflow.png"
                 alt="Email Workflow"
@@ -201,13 +201,13 @@ const HowItWorks = () => {
           {/* Voiceflow + Chatbot Demo */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500">
+                <div className="glass-morphism rounded-2xl p-1 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 ">
                   <img
                     src="/Voiceflow-Workflow.png"
                     alt="Voiceflow Workflow"
                     className="rounded-xl shadow-2xl w-full opacity-30"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 sm:px-4">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 sm:px-4 mb-6">
                     <img
                       src="/Chatbot Web-Demo1 (2).gif"
                       alt="Workflow: how Solryn automates a support request"
@@ -216,10 +216,10 @@ const HowItWorks = () => {
                   </div>
                 </div>
                 {/* Extra spacing below GIF to prevent overlap */}
-                <div className="mt-8 lg:mt-12"></div>
+                <div className="mt-8 lg:mt-12 "></div>
               </div>
               <div className="text-left space-y-6">
-                <h3 className="text-3xl font-bold text-white">Conversational AI Assistants</h3>
+                <h3 className="text-3xl font-bold text-white ">Conversational AI Assistants</h3>
                 <p className="text-slate-400 text-lg leading-relaxed">
                   From lead qualification to appointment booking, our Voiceflow-powered AI agents engage visitors in natural, human-like conversations.
                 </p>

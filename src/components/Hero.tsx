@@ -122,14 +122,14 @@ const Hero = () => {
           @media (max-width: 768px) {
             /* Move label up slightly */
             .absolute.z-10.text-white.select-none > div {
-              margin-top: 240px;
+              margin-top: 350px;
             }
 
             /* Center buttons on mobile */
             .absolute.z-30.flex {
               left: 42% !important;
               transform: translateX(-36%);
-              margin-top: -20px;
+              margin-top: -50px;
             }
           }
         `}</style>
@@ -161,12 +161,8 @@ const Hero = () => {
             <img src="/n8n.png" alt="n8n" className="h-6 sm:h-8 lg:h-6 object-contain" />
             <img src="/Apify.svg" alt="Apify" className="h-6 sm:h-8 lg:h-6 object-contain" />
             <img src="/Supabase.png" alt="Supabase" className="h-6 sm:h-8 lg:h-6 object-contain" />
-            <img src="/Linkedin.png" alt="Linkedin" className="h-10 sm:h-8 lg:h-10 object-contain" />
-            <img
-              src="/Google_Workspace_Logo.svg.png"
-              alt="Google Workspace"
-              className="h-6 sm:h-8 lg:h-5 object-contain"
-            />
+            <img src="/Linkedin.png" alt="Linkedin" className="h-7 sm:h-8 lg:h-7 object-contain" />
+            <img src="/Google_Workspace_Logo.svg.png" alt="Google Workspace" className="h-6 sm:h-8 lg:h-5 object-contain" />
             <img src="/Sheet.png" alt="Google Sheets" className="h-6 sm:h-8 lg:h-7 object-contain" />
             <img src="/Calendly.png" alt="Calendly" className="h-6 sm:h-8 lg:h-8 object-contain" />
           </div>

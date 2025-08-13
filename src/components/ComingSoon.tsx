@@ -63,9 +63,6 @@ const ComingSoon = () => {
     return () => observer.disconnect();
   }, []);
 
-  function openModal(_arg0: string): void {
-    throw new Error('Function not implemented.');
-  }
 
   return (
     <section className="relative py-20 overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24" style={{ backgroundColor: '#0A0D10' }}>
@@ -157,12 +154,12 @@ const ComingSoon = () => {
                 placeholder="Enter your email"
                 className="flex-1 glass-morphism border border-white/10 rounded-xl px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
               />
-              <button 
-                onClick={() => openModal('Join Waitlist')}
-                className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 mt-4"
-              >
-                Join Waitlist
-              </button>
+              <form action="YOUR_GOOGLE_SCRIPT_URL" method="POST">
+                <button 
+                  className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 mt-4">
+                  Join Waitlist
+                </button>
+              </form>
             </div>
 
             <div className="flex items-center justify-center space-x-6 mt-8 text-sm text-slate-400">

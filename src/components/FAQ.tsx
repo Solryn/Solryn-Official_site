@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, HelpCircle, ArrowRight } from 'lucide-react';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -126,8 +126,15 @@ const FAQ = () => {
           <div className="glass-morphism rounded-2xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-white mb-4">Still have questions?</h3>
             <p className="text-slate-400 mb-6">Get in touch with our team for personalized answers.</p>
-            <button className="btn-premium">
-              Contact Our Team
+            <button className="bg-black/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:border-cyan-500/50 hover:bg-black/20 transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25 flex flex-col items-center "
+            >
+              <div className="flex items-center justify-center space-x-3">
+                <ArrowRight className="h-5 w-5" />
+                <a href="mailto:hello@solrynhq.com">
+                  Contact Our Team
+                </a>
+                
+              </div>
             </button>
           </div>
         </div>

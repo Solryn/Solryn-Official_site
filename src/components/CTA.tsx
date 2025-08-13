@@ -66,14 +66,17 @@ const CTA = () => {
             isVisible ? 'animate-in fade-in zoom-in' : 'opacity-0'
           }`} style={{ animationDelay: '0.4s' }}>
             <button 
-              onClick={() => openModal('Book Strategy Call')}
+              
               className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex flex-col items-center"
             >
               <div className="flex items-center space-x-3">
                 <ArrowRight className="h-5 w-5" />
-                <span>Book Strategy Call</span>
+                <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+                  <button>Book Strategy Call</button>
+                </a>
               </div>
               <span className="text-xs text-white/80 mt-1">Setup in 72hrs</span>
+              
             </button>
             
             <button 
