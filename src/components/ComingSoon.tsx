@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
 import { Repeat, FileText, Mail, Phone, Link, Calendar, Sparkles } from 'lucide-react';
-
-const COMING_SOON_ENDPOINT = "https://script.google.com/macros/s/AKfycbwcfm71jN5fdiqh7_XelJqTou7PBKU8d1wGgFSs4zuaEms-a9ouTx7asjjpXvBWcTTx/exec"; // <-- paste your Google Apps Script URL here
+import { useEffect, useState } from 'react';
 
 const ComingSoon = () => {
   const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const features = [
@@ -23,7 +21,7 @@ const ComingSoon = () => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.getAttribute('data-index') || '0');
             setTimeout(() => {
-              setVisibleFeatures((prev) => [...prev, index]);
+              setVisibleFeatures(prev => [...prev, index]);
             }, index * 150);
           }
         });
@@ -32,7 +30,7 @@ const ComingSoon = () => {
     );
 
     const elements = document.querySelectorAll('.coming-soon-item');
-    elements.forEach((el) => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -40,19 +38,21 @@ const ComingSoon = () => {
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await fetch(COMING_SOON_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        email,
-        source: "coming_soon_waitlist"
-      }).toString(),
-    });
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwcfm71jN5fdiqh7_XelJqTou7PBKU8d1wGgFSs4zuaEms-a9ouTx7asjjpXvBWcTTx/exec", {
+        method: "POST",
+        body: new URLSearchParams({ email })
+      });
 
-    setSubmitted(true);
-    setEmail('');
+      setSubmitted(true);
+      setEmail("");
 
-    setTimeout(() => setSubmitted(false), 3000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 4000);
+    } catch (error) {
+      console.error("Error submitting waitlist:", error);
+    }
   };
 
   return (
@@ -133,26 +133,28 @@ const ComingSoon = () => {
               Get notified when we roll out advanced automation features. Be among the first to access next-generation AI tools.
             </p>
 
-            {!submitted ? (
-              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="flex-1 glass-morphism border border-white/10 rounded-xl px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
-                >
-                  Join Waitlist
-                </button>
-              </form>
-            ) : (
-              <p className="text-green-400 text-lg font-semibold">✅ Thanks! You're on the list.</p>
-            )}
+            {submitted ? (
+            <p className="text-green-400 text-lg font-semibold animate-fade-in">
+              ✅ Thanks! You're on the waitlist.
+            </p>
+          ) : (
+            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="flex-1 glass-morphism border border-white/10 rounded-xl px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+              />
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+              >
+                Join Waitlist
+              </button>
+            </form>
+          )}
 
             {/* Info Badges */}
             <div className="flex items-center justify-center space-x-6 mt-8 text-sm text-slate-400">

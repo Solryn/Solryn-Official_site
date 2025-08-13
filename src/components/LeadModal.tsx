@@ -6,10 +6,15 @@ interface LeadModalProps {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  source?: string;
+  source?: string; // Source is passed from parent
 }
 
-const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get Your Custom Bot", source = "unknown" }) => {
+const LeadModal: React.FC<LeadModalProps> = ({
+  isOpen,
+  onClose,
+  title = "Get Your Custom Bot",
+  source = "unknown"
+}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +30,11 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
     setIsSubmitting(true);
 
     try {
+      if (!supabase) {
+        console.error("Supabase client not initialized");
+        return;
+      }
+
       const { error } = await supabase
         .from('Leads')
         .insert([
@@ -34,7 +44,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
             Business_type: formData.businessType,
             Domain: formData.domain,
             Description: formData.description,
-            Source: source // NEW
+            Source: source // ✅ Source comes from parent
           }
         ]);
 
@@ -59,7 +69,9 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -135,15 +147,15 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
                   WebkitAppearance: 'none',
                   MozAppearance: 'none',
                   appearance: 'none',
-                  backgroundColor: '#000000', // fallback for unsupported Tailwind classes
+                  backgroundColor: '#000000',
                 }}
               >
                 <option value="" disabled hidden>Select your business type</option>
-                <option className="text-white" value="Hotel">Hotel</option>
-                <option className="text-white" value="Clinic">Clinic</option>
-                <option className="text-white" value="B2B">B2B</option>
-                <option className="text-white" value="Agency">Agency</option>
-                <option className="text-white" value="Other">Other</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Clinic">Clinic</option>
+                <option value="B2B">B2B</option>
+                <option value="Agency">Agency</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -179,7 +191,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, title = "Get You
               type="submit"
               disabled={isSubmitting}
               className="w-full bg-cyan-600 text-white text-sm font-semibold py-3 rounded-xl mt-4 hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
-              >
+            >
               {isSubmitting ? 'Submitting...' : 'Send Request'}
             </button>
           </form>
