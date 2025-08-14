@@ -139,7 +139,7 @@ const Footer = () => {
                       />
                       <button
                         type="submit"
-                        className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white p-4 rounded-xl hover:scale-105 transition-transform duration-300"
+                        className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white p-2 rounded-xl hover:scale-105 transition-transform duration-300 justify-center max-w-md mx-auto"
                       >
                         <ArrowRight className="h-4 w-4" />
                       </button>
