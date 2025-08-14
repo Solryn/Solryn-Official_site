@@ -135,11 +135,11 @@ const Footer = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
                         required
-                        className="flex-1 glass-morphism border border-white/10 rounded-xl px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                        className="flex-1 glass-morphism border border-white/10 rounded-xl px-9 py-3 text-black placeholder-slate-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
                       />
                       <button
                         type="submit"
-                        className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white p-2 rounded-xl hover:scale-105 transition-transform duration-300"
+                        className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white p-4 rounded-xl hover:scale-105 transition-transform duration-300"
                       >
                         <ArrowRight className="h-4 w-4" />
                       </button>
