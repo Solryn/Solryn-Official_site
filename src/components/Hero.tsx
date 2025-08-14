@@ -94,7 +94,7 @@ const Hero = () => {
           }}
         >
           <button
-            onClick={() => openModal('Get Custom Automation')}
+            onClick={() => openModal('Get Custom Automation', 'Hero - Get Custom Automation')}
             className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center group"
           >
             <div className="flex items-center space-x-3">
@@ -105,17 +105,16 @@ const Hero = () => {
           </button>
 
           <button
-            onClick={() => openModal('Get Free Automation Blueprint')}
+            onClick={() => openModal('Free Automation Blueprint', 'Hero - Get Free Automation Blueprint')}
             className="bg-white/10 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center group"
           >
             <div className="flex items-center space-x-3">
               <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
               <span>Get Free Blueprint</span>
             </div>
-            <span className="text-xs text-white/70 mt-1">
-              No credit card required
-            </span>
+            <span className="text-xs text-white/70 mt-1">No credit card required</span>
           </button>
+
         </div>
         <style >{`
           /* Mobile only adjustments */

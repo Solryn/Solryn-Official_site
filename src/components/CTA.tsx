@@ -80,7 +80,7 @@ const CTA = () => {
             </button>
             
             <button 
-              onClick={() => openModal('Get Free Automation Blueprint')}
+              onClick={() => openModal('Get Free Automation Blueprint', 'CTA - Get Free Automation Blueprint')}
               className="bg-black/10 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:border-cyan-500/50 hover:bg-black/20 transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25 flex flex-col items-center"
             >
               <div className="flex items-center space-x-3">
