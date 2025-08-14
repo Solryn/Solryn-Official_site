@@ -89,7 +89,7 @@ const Features = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
             <Zap className="h-4 w-4 text-cyan-400" />
-            <span>Powerful Features</span>
+            <span>Powerful Outcomes</span>
           </div>
           
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">

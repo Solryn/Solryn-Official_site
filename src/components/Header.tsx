@@ -57,7 +57,7 @@ const Header = () => {
               onClick={() => scrollToSection('features')} 
               className="text-slate-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 relative group"
             >
-              Features
+              Outcomes
               <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 group-hover:w-full transition-all duration-300"></div>
             </button>
             <button 

@@ -10,7 +10,7 @@ const Pricing = () => {
       badge: "72 HRS DELIVERY",
       price: "$1,000",
       monthly: "$500/mo",
-      desc: "Simple workflows like email follow-ups, intake forms, and booking reminders.",
+      desc: "Perfect for small teams that need fast wins. Automates one core workflow (like lead follow-ups, form submissions, or appointment reminders) so you can focus on higher-value work. Delivered in 72 hours.",
       source: "Pricing - Starter Automation"
     },
     {
@@ -18,7 +18,7 @@ const Pricing = () => {
       badge: "72 HRS DELIVERY",
       price: "$1,800",
       monthly: "$800/mo",
-      desc: "Multi-step workflows, multi-channel (Email + SMS + CRM), and custom triggers.",
+      desc: "Multi-channel, multi-step workflows tailored to your sales or service pipeline. From CRM updates to cross-channel nurturing, your process runs like clockwork. Delivered in 72 hours.",
       source: "Pricing - Advanced Automation"
     },
     {
@@ -26,7 +26,7 @@ const Pricing = () => {
       badge: "4–7 DAYS DELIVERY",
       price: "$3,000",
       monthly: "$1,500/mo",
-      desc: "Voice AI, chatbot + CRM sync, and sales pipeline automation.",
+      desc: "AI voice agents, intelligent chatbots, and CRM-integrated sales pipelines — all in one system. Handles customer conversations, schedules, and follow-ups 24/7. Delivery: 4–7 days.",
       source: "Pricing - Premium AI System"
     },
     {
@@ -34,28 +34,28 @@ const Pricing = () => {
       badge: "72 HRS DELIVERY",
       price: "$2,000",
       monthly: "$1,000/mo",
-      desc: "Proposal generators, icebreaker personalization, and content repurposing engines.",
+      desc: " Bespoke AI engines for your business — from proposal generators to content repurposing systems to hyper-personalized sales icebreakers. Delivered in 72 hours.",
       source: "Pricing - Custom AI Generators"
     },
     {
       title: "Performance-Driven Automation",
       badge: "4–7 DAYS DELIVERY",
       price: "$2,500 or 10–20% revenue share",
-      desc: "AI-powered lead gen engines, sales assistants, and appointment setters.",
+      desc: " Lead-gen engines, appointment setters, and AI sales assistants designed to generate direct revenue. We only win when you do. Delivery: 4–7 days.",
       source: "Pricing - Performance Automation"
     },
     {
       title: "Add-On Workflow",
       badge: "48 HRS DELIVERY",
       price: "$300–$500",
-      desc: "Small enhancements or new triggers for existing automations.",
+      desc: " Small but impactful improvements to existing automations — new triggers, integrations, or optimizations. Delivered in 48 hours.",
       source: "Pricing - Add-On Workflow"
     },
     {
       title: "Rush Delivery Upgrade",
       badge: "24–48 HRS DELIVERY",
       price: "+20–30% surcharge",
-      desc: "Priority turnaround for urgent builds.",
+      desc: "Need it yesterday? Move to the front of the line with 24–48 hour delivery.",
       source: "Pricing - Rush Delivery"
     }
   ];
@@ -68,10 +68,13 @@ const Pricing = () => {
                 <span>Pricing Plans Built For Real World</span>
           </div>
         <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-4">
-          Choose the automation level that matches your business goals
+          AI Automation, Built for the Real World -<br></br> Delivered in Days, Not Months.<br></br>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto">
-          72-hour delivery on most projects. No hidden fees.
+          Get Scalable, Human-like Automations Custom-Built to your Workflows in as a little as 72 Hours<br></br><br></br>
+        </p>
+        <p className="text-2xl text-slate-400 max-w-7xl mx-auto">
+          You don't need another Bloated SaaS Tool.<br></br> You need an Automation Partner that Understands your Business,<br></br> Moves fast, and delivers measurable Results - Without the endless trial and error.
         </p>
       </div>
 
@@ -107,7 +110,8 @@ const Pricing = () => {
       </div>
 
       <div className="text-center mt-12 text-slate-500 text-sm">
-        💬 All pricing is “starting from” and depends on complexity. We’ll provide a custom quote after your free strategy call.
+      Don’t wait for “someday.” Every day you delay automating, you’re losing leads, time, and revenue. Book your free strategy call and get your first automation live this week.
+
       </div>
     </section>
   );
