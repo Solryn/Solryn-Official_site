@@ -1,187 +1,115 @@
-import { Check, ArrowRight, Star, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { useModal } from '../contexts/ModalContext';
-import { useEffect, useState } from 'react';
 
 const Pricing = () => {
   const { openModal } = useModal();
-  const [shouldPulse, setShouldPulse] = useState(false);
 
   const plans = [
     {
-      name: "Starter",
-      price: "$149",
-      period: "/mo",
-      description: "Basic chatbot + workflows",
-      features: [
-        "Custom chatbot development",
-        "Basic workflow automation",
-        "Website integration",
-        "Email support",
-        "Monthly optimization"
-      ],
-      cta: "Get Started With Automation",
-      popular: false
+      title: "Starter Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,000",
+      monthly: "$500/mo",
+      desc: "Simple workflows like email follow-ups, intake forms, and booking reminders.",
+      source: "Pricing - Starter Automation"
     },
     {
-      name: "Growth",
-      price: "$399",
-      period: "/mo",
-      description: "Multi-channel + CRM",
-      features: [
-        "Everything in Starter",
-        "Multi-channel deployment",
-        "CRM integrations",
-        "Advanced workflows",
-        "Priority support"
-      ],
-      cta: "Get Started With Automation",
-      popular: true
+      title: "Advanced Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,800",
+      monthly: "$800/mo",
+      desc: "Multi-step workflows, multi-channel (Email + SMS + CRM), and custom triggers.",
+      source: "Pricing - Advanced Automation"
     },
     {
-      name: "Enterprise",
-      price: "Custom Quote",
-      period: "",
-      description: "Full stack + white-label",
-      features: [
-        "Everything in Growth",
-        "Dedicated account manager",
-        "White-label solutions",
-        "Custom integrations",
-        "White-label options"
-      ],
-      cta: "Get Your Customized Automations",
-      popular: false
+      title: "Premium AI System",
+      badge: "4–7 DAYS DELIVERY",
+      price: "$3,000",
+      monthly: "$1,500/mo",
+      desc: "Voice AI, chatbot + CRM sync, and sales pipeline automation.",
+      source: "Pricing - Premium AI System"
+    },
+    {
+      title: "Custom AI Generators",
+      badge: "72 HRS DELIVERY",
+      price: "$2,000",
+      monthly: "$1,000/mo",
+      desc: "Proposal generators, icebreaker personalization, and content repurposing engines.",
+      source: "Pricing - Custom AI Generators"
+    },
+    {
+      title: "Performance-Driven Automation",
+      badge: "4–7 DAYS DELIVERY",
+      price: "$2,500 or 10–20% revenue share",
+      desc: "AI-powered lead gen engines, sales assistants, and appointment setters.",
+      source: "Pricing - Performance Automation"
+    },
+    {
+      title: "Add-On Workflow",
+      badge: "48 HRS DELIVERY",
+      price: "$300–$500",
+      desc: "Small enhancements or new triggers for existing automations.",
+      source: "Pricing - Add-On Workflow"
+    },
+    {
+      title: "Rush Delivery Upgrade",
+      badge: "24–48 HRS DELIVERY",
+      price: "+20–30% surcharge",
+      desc: "Priority turnaround for urgent builds.",
+      source: "Pricing - Rush Delivery"
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setShouldPulse(true), 3000);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const element = document.getElementById('pricing');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
-
   return (
-    <div>
-      <section id="pricing" className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0A0D10' }}>
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.1) 1px, transparent 0)',
-            backgroundSize: '60px 60px',
-            animation: 'float 20s ease-in-out infinite'
-          }}
-        ></div>
+    <section id="pricing" className="py-20 px-6 sm:px-12 md:px-16 lg:px-24" style={{ backgroundColor: '#0A0D10' }}>
+      <div className="max-w-7xl mx-auto text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
+                <Zap className="h-4 w-4 text-cyan-400" />
+                <span>Pricing Plans Built For Real World</span>
+          </div>
+        <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-4">
+          Choose the automation level that matches your business goals
+        </h2>
+        <p className="text-slate-400 max-w-2xl mx-auto">
+          72-hour delivery on most projects. No hidden fees.
+        </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-black/20 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm text-slate-300 mb-6">
-            <Zap className="h-4 w-4 text-cyan-400" />
-            <span>Flexible Pricing</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-            Flexible Plans for Every Stage
-          </h2>
-          <p className="text-xl text-slate-400 font-light max-w-3xl mx-auto">
-            From simple chatbots to complex automation — choose the plan that fits your needs.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative bg-black/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 transition-all duration-500 hover:scale-105 ${
-                plan.popular 
-                  ? 'border-emerald-500/50 shadow-2xl shadow-emerald-500/10 hover:glow-emerald hover:scale-105' 
-                  : 'hover:border-cyan-500/50 hover:glow-cyan hover:scale-105'
-              }`}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className="glass-morphism rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:scale-105 flex flex-col justify-between"
+          >
+            <div>
+              <div className="mb-4">
+                <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  {plan.badge}
+                </span>
+              </div>
+              <h3 className="font-display text-2xl font-bold text-white mb-4">{plan.title}</h3>
+              <p className="text-slate-400 mb-6">{plan.desc}</p>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-white">{plan.price}</span>
+                {plan.monthly && (
+                  <span className="block text-slate-400 text-sm mt-1">{plan.monthly} (optional)</span>
+                )}
+              </div>
+            </div>
+            <button
+              onClick={() => openModal(plan.title, plan.source)} // ✅ passes correct source
+              className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg mt-4"
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-2 shadow-lg">
-                    <Star className="h-4 w-4" />
-                    <span>Most Popular</span>
-                  </div>
-                </div>
-              )}
-
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  <span className="text-slate-400 ml-1">{plan.period}</span>
-                </div>
-                <p className="text-slate-400">{plan.description}</p>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center space-x-3">
-                    <div className="bg-cyan-500/20 rounded-full p-1">
-                      <Check className="h-4 w-4 text-cyan-400" />
-                    </div>
-                    <span className="text-slate-300">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button 
-                onClick={() => openModal(plan.cta)}
-                className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
-                  plan.popular
-                    ? `bg-gradient-to-r from-cyan-500 to-emerald-500 text-white hover:from-cyan-400 hover:to-emerald-400 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 ${shouldPulse && plan.name === 'Growth' ? 'animate-pulse' : ''}`
-                    : 'bg-black/10 backdrop-blur-sm border border-white/10 text-white hover:border-cyan-500/50 hover:bg-black/20 transform hover:scale-105 hover:shadow-cyan-500/25'
-                }`}
-              >
-                <span>{plan.cta}</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-slate-400 mb-6">All plans include:</p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-300">
-            <div className="flex items-center space-x-2">
-              <Check className="h-4 w-4 text-cyan-400" />
-              <span>Custom development</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Check className="h-4 w-4 text-cyan-400" />
-              <span>Fast deployment</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Check className="h-4 w-4 text-cyan-400" />
-              <span>Integration support</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Check className="h-4 w-4 text-cyan-400" />
-              <span>Ongoing optimization</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Check className="h-4 w-4 text-cyan-400" />
-              <span>24/7 monitoring</span>
-            </div>
+              Request Quote
+            </button>
           </div>
-        </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-12 text-slate-500 text-sm">
+        💬 All pricing is “starting from” and depends on complexity. We’ll provide a custom quote after your free strategy call.
       </div>
     </section>
-    </div>
   );
 };
 
