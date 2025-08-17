@@ -62,7 +62,7 @@ export default function MedSpa() {
                           px-4 py-2 mb-6 text-slate-300 text-sm">
             <AlertCircle className="h-4 w-4 text-red-400 mr-2" /> Why Traditional Med Spa Ops Leak Revenue
           </div>
-          <h2 className="text-3xl font-bold mb-4">Every Missed Call is a Lost Treatment — and a Lost Relationship</h2>
+          <h2 className="text-5xl font-bold mb-4">Every Missed Call is a Lost Treatment — and a Lost Relationship</h2>
           <p className="text-slate-400 max-w-3xl mx-auto">
             Your front desk is juggling phones, DMs, confirmations, reschedules, and post‑care questions.
             By the time someone calls back, the client has already booked elsewhere. No‑shows hit margins,
@@ -104,8 +104,8 @@ export default function MedSpa() {
                           px-4 py-2 mb-6 text-slate-300 text-sm">
             <MessageSquare className="h-4 w-4 text-cyan-400 mr-2" /> The VIP Client Journey (Automated)
           </div>
-          <h2 className="text-3xl font-bold mb-4">From First DM to Loyal Client — In One Seamless Flow</h2>
-          <p className="text-slate-400 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold mb-4">From First DM to Loyal Client — In One Seamless Flow</h2>
+          <p className="text-slate-400 max-w-4xl mx-auto">
             We map your entire client journey: instant response → booking → reminders → treatment → follow‑up → review → upsell.
             The system runs quietly in the background, while your team focuses on experience.
           </p>
@@ -162,7 +162,7 @@ export default function MedSpa() {
                           px-4 py-2 mb-6 text-slate-300 text-sm">
             <TrendingUp className="h-4 w-4 text-cyan-400 mr-2" /> Built for Luxury Med Spas
           </div>
-          <h2 className="text-3xl font-bold mb-4">Automations That Drive Bookings and Loyalty</h2>
+          <h2 className="text-5xl font-bold mb-4">Automations That Drive Bookings and Loyalty</h2>
           <p className="text-slate-400 max-w-3xl mx-auto">
             Every feature is tuned for premium clientele: speed, personalization, and brand‑consistent messaging
             that turns first‑timers into regulars.
@@ -197,7 +197,7 @@ export default function MedSpa() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <BarChart3 className="h-4 w-4 text-cyan-400 mr-2" /> Proven Revenue & Retention Lift
         </div>
-        <h2 className="text-3xl font-bold mb-6">What Happens When Your Spa Answers in Seconds</h2>
+        <h2 className="text-5xl font-bold mb-6">What Happens When Your Spa Answers in Seconds</h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-slate-300 mb-12">
           {[
@@ -223,7 +223,7 @@ export default function MedSpa() {
 
       {/* Comparison Grid */}
       <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-24 bg-black">
-        <h2 className="text-3xl font-bold text-center mb-10">Without Automation vs With Solryn</h2>
+        <h2 className="text-5xl font-bold text-center mb-10">Without Automation vs With Solryn</h2>
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Without */}
           <div className="p-8 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl 
@@ -255,7 +255,7 @@ export default function MedSpa() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <CreditCard className="h-4 w-4 text-cyan-400 mr-2" /> Custom Systems, Delivered in 72 Hours
         </div>
-        <h2 className="text-3xl font-bold mb-4">Pricing Snapshot</h2>
+        <h2 className="text-5xl font-bold mb-4">Pricing Snapshot</h2>
         <p className="text-slate-400 mb-12">
           For less than a part‑time receptionist, get a 24/7 AI system that never misses a lead and never forgets a follow‑up.
         </p>
@@ -289,7 +289,7 @@ export default function MedSpa() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <Rocket className="h-4 w-4 text-cyan-400 mr-2" /> Your Next 50 Bookings Are Waiting
         </div>
-        <h2 className="text-3xl font-bold mb-6">Make Your Med Spa the Obvious Choice</h2>
+        <h2 className="text-5xl font-bold mb-6">Make Your Med Spa the Obvious Choice</h2>
         <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
           Give clients the experience they expect — fast, clear, and personal — while your team gets hours back.
           We’ll build your automation system and launch it in days, not months.
