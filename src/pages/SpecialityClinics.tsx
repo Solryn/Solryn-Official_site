@@ -23,7 +23,7 @@ export default function SpecialityClinics() {
           <div className="inline-flex items-center bg-black/30 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
             <Sparkles className="h-4 w-4 text-cyan-400 mr-2" /> AI Automation for Specialty Clinics
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
             Automate Patient Care <br />
             <span className="text-gradient-premium">Without Losing the Human Touch</span>
           </h1>
@@ -56,7 +56,7 @@ export default function SpecialityClinics() {
                           px-4 py-2 mb-6 text-slate-300 text-sm">
             <AlertCircle className="h-4 w-4 text-red-400 mr-2" /> Why Traditional Clinic Workflows Fail
           </div>
-          <h2 className="text-3xl font-bold mb-4">Overbooked, Understaffed — Patients Feel It</h2>
+          <h2 className="text-5xl font-bold mb-4">Overbooked, Understaffed — Patients Feel It</h2>
           <p className="text-slate-400 max-w-3xl mx-auto">
             Every unanswered call, every missed reminder, every admin bottleneck means patients wait longer and staff burn out faster. Clinics lose revenue — patients lose trust.
           </p>
@@ -94,7 +94,7 @@ export default function SpecialityClinics() {
                           px-4 py-2 mb-6 text-slate-300 text-sm">
             <ClipboardList className="h-4 w-4 text-cyan-400 mr-2" /> Built for Patient-Centered Care
           </div>
-          <h2 className="text-3xl font-bold mb-4">Automations That Put Patients First</h2>
+          <h2 className="text-5xl font-bold mb-4">Automations That Put Patients First</h2>
           <p className="text-slate-400 max-w-3xl mx-auto">
             From the first intake form to the last post-treatment follow-up, every feature ensures patients feel supported while your clinic runs smoother than ever.
           </p>
@@ -127,7 +127,7 @@ export default function SpecialityClinics() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <BarChart3 className="h-4 w-4 text-cyan-400 mr-2" /> Proven Results for Specialty Clinics
         </div>
-        <h2 className="text-3xl font-bold mb-6">The Results Speak for Themselves</h2>
+        <h2 className="text-5xl font-bold mb-6">The Results Speak for Themselves</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-slate-300 mb-16">
           {[
             "No-shows reduced by 42% in 6 weeks",
@@ -154,7 +154,7 @@ export default function SpecialityClinics() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <CreditCard className="h-4 w-4 text-cyan-400 mr-2" /> Custom Systems, Delivered in 72 Hours
         </div>
-        <h2 className="text-3xl font-bold mb-4">Pricing Snapshot</h2>
+        <h2 className="text-5xl font-bold mb-4">Pricing Snapshot</h2>
         <p className="text-slate-400 mb-12">
           Tailored automation systems for specialty clinics — live in <span className="text-white font-semibold">72 hours or less</span>.
         </p>
@@ -187,7 +187,7 @@ export default function SpecialityClinics() {
                         px-4 py-2 mb-6 text-slate-300 text-sm">
           <Rocket className="h-4 w-4 text-cyan-400 mr-2" /> Free Up Your Staff, Elevate Patient Care
         </div>
-        <h2 className="text-3xl font-bold mb-6">Your Clinic Can Do More With Less</h2>
+        <h2 className="text-5xl font-bold mb-6">Your Clinic Can Do More With Less</h2>
         <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
           Patients deserve faster service and better follow-up. Staff deserve fewer admin headaches. Solryn makes both possible — in days, not months.
         </p>
