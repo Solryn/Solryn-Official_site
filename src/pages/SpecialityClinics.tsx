@@ -60,6 +60,13 @@ export default function SpecialityClinics() {
             </button>
           </div>
         </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 hidden lg:flex">
+          <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center animate-pulse">
+            <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce"></div>
+          </div>
+        </div>
       </section>
 
       {/* Problem & Solution */}

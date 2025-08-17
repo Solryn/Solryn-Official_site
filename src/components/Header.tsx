@@ -1,12 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useModal } from '../contexts/ModalContext';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false); // ✅ for mobile
+  const [isIndustriesDesktopOpen, setIsIndustriesDesktopOpen] = useState(false); // ✅ desktop toggle
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const { openModal } = useModal();
 
   useEffect(() => {
@@ -14,7 +18,18 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsIndustriesDesktopOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -51,6 +66,14 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
+          <Link
+            to="/"
+            className="text-slate-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 relative group"
+          >
+            Home
+            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 group-hover:w-full transition-all duration-300"></div>
+          </Link>
+
           <button
             onClick={() => scrollToSection('features')}
             className="text-slate-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 relative group"
@@ -67,16 +90,22 @@ const Header = () => {
             <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 group-hover:w-full transition-all duration-300"></div>
           </button>
 
-          {/* Industries Dropdown */}
-          <div className="relative group">
-            <button className="text-slate-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 flex items-center gap-1">
-              Industries <ChevronDown size={16} />
+          {/* Industries Dropdown (Desktop) */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsIndustriesDesktopOpen(!isIndustriesDesktopOpen)}
+              className="text-slate-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 relative group flex items-center gap-1"
+            >
+              Industries <ChevronDown size={16} className={`${isIndustriesDesktopOpen ? "rotate-180" : ""} transition-transform`} />
+            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 group-hover:w-full transition-all duration-300"></div>
             </button>
-            <div className="absolute hidden group-hover:block bg-black/90 text-white mt-2 rounded-lg shadow-lg p-4 space-y-2 w-56">
-              <Link to="/MedSpa" className="block hover:text-cyan-400">Med Spas</Link>
-              <Link to="/SpecialityClinics" className="block hover:text-cyan-400">Specialty Clinics</Link>
-              <Link to="/HighEndRealEstate" className="block hover:text-cyan-400">Real Estate</Link>
-            </div>
+            {isIndustriesDesktopOpen && (
+              <div className="absolute bg-black/90 text-white mt-2 rounded-lg shadow-lg p-4 space-y-2 w-56 ">
+                <Link to="/MedSpa" className="block hover:text-cyan-400">Med Spas</Link>
+                <Link to="/SpecialityClinics" className="block hover:text-cyan-400">Specialty Clinics</Link>
+                <Link to="/HighEndRealEstate" className="block hover:text-cyan-400">Real Estate</Link>
+              </div>
+            )}
           </div>
 
           <button
@@ -108,6 +137,13 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10 animate-fade-in">
           <div className="px-6 py-6 space-y-4">
+            <Link
+              to="/"
+              className="block text-slate-300 hover:text-white py-3 w-full text-left font-medium hover:bg-white/5 rounded-lg px-3"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
             <button
               onClick={() => scrollToSection('features')}
               className="block text-slate-300 hover:text-white py-3 w-full text-left font-medium hover:bg-white/5 rounded-lg px-3"
@@ -121,45 +157,44 @@ const Header = () => {
               Pricing
             </button>
 
-            {/* Industries toggle on mobile */}
-            {/* Mobile Industries Accordion */}
-<div className="border-t border-white/10 my-2">
-  <button
-    onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-    className="flex items-center justify-between w-full text-slate-300 hover:text-white py-3 font-medium hover:bg-white/5 rounded-lg px-3"
-  >
-    Industries
-    <ChevronDown
-      size={16}
-      className={`${isIndustriesOpen ? "rotate-180" : ""} transition-transform`}
-    />
-  </button>
-  {isIndustriesOpen && (
-    <div className="mt-2 space-y-2 pl-4">
-      <Link 
-        to="/MedSpa" 
-        className="block text-slate-300 hover:text-cyan-400"
-        onClick={() => setIsMenuOpen(false)}
-      >
-        Med Spas
-      </Link>
-      <Link 
-        to="/SpecialityClinics" 
-        className="block text-slate-300 hover:text-cyan-400"
-        onClick={() => setIsMenuOpen(false)}
-      >
-        Specialty Clinics
-      </Link>
-      <Link 
-        to="/HighEndRealEstate" 
-        className="block text-slate-300 hover:text-cyan-400"
-        onClick={() => setIsMenuOpen(false)}
-      >
-        Real Estate
-      </Link>
-    </div>
-  )}
-</div>
+            {/* Mobile Industries Accordion (unchanged) */}
+            <div className="border-t border-white/10 my-2">
+              <button
+                onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
+                className="flex items-center justify-between w-full text-slate-300 hover:text-white py-3 font-medium hover:bg-white/5 rounded-lg px-3"
+              >
+                Industries
+                <ChevronDown
+                  size={16}
+                  className={`${isIndustriesOpen ? "rotate-180" : ""} transition-transform`}
+                />
+              </button>
+              {isIndustriesOpen && (
+                <div className="mt-2 space-y-2 pl-4">
+                  <Link 
+                    to="/MedSpa" 
+                    className="block text-slate-300 hover:text-cyan-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Med Spas
+                  </Link>
+                  <Link 
+                    to="/SpecialityClinics" 
+                    className="block text-slate-300 hover:text-cyan-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Specialty Clinics
+                  </Link>
+                  <Link 
+                    to="/HighEndRealEstate" 
+                    className="block text-slate-300 hover:text-cyan-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Real Estate
+                  </Link>
+                </div>
+              )}
+            </div>
             <button
               onClick={() => scrollToSection('footer')}
               className="block text-slate-300 hover:text-white py-3 w-full text-left font-medium hover:bg-white/5 rounded-lg px-3"

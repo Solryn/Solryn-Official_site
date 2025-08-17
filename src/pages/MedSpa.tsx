@@ -41,8 +41,8 @@ export default function MedSpa() {
           </h1>
           <p className="text-lg text-slate-400 mb-8">
             Solryn delivers next-generation AI automation for luxury Med Spas —
-            increasing bookings, maximizing repeat visits, and giving your clients
-            a seamless VIP journey. All in 72 hours or less.
+            increasing bookings by 40%, maximizing repeat visits, and giving your clients
+            a seamless VIP journey, without hiring extra staff. All in 72 hours or less.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
@@ -57,6 +57,13 @@ export default function MedSpa() {
             >
               View Automation Packages
             </button>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 hidden lg:flex">
+          <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center animate-pulse">
+            <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
       </section>

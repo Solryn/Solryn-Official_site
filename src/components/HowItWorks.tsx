@@ -1,4 +1,5 @@
 import { Search, Wrench, Rocket } from 'lucide-react';
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 const HowItWorks = () => {

@@ -2,6 +2,7 @@ import { Play, ArrowRight, Sparkles } from 'lucide-react';
 import { useModal } from '../contexts/ModalContext';
 import { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
+import React from 'react';
 
 const Hero = () => {
   const { openModal } = useModal();

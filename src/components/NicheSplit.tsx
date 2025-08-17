@@ -1,4 +1,5 @@
 import { Heart, Building2, ArrowRight, Users, Briefcase } from 'lucide-react';
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 const NicheSplit = () => {
