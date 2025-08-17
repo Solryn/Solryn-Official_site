@@ -1,24 +1,49 @@
-import { CheckCircle, Zap, Clock, Home, Calendar, MessageSquare, Users, XCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, Zap, Clock, Home, Calendar, MessageSquare, Users, XCircle, ArrowRight, Sparkles } from "lucide-react";
 import { useModal } from "../contexts/ModalContext";
+import React from "react";
 
 export default function HighEndRealEstate() {
   const { openModal } = useModal();
 
   return (
     <div className="bg-[#0A0D10] text-white">
-      {/* Hero */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left */}
-        <div className="text-center lg:text-left">
+      {/* Hero with Background Video */}
+      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Desktop Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        >
+          <source src="/PagesAnimation.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Mobile Fallback Image */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center md:hidden"
+          style={{ backgroundImage: "url('/realestate-fallback.jpg')" }}
+        />
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center max-w-3xl px-6">
+          <div className="inline-flex items-center bg-black/30 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
+            <Sparkles className="h-4 w-4 text-cyan-400 mr-2" /> AI Automation for Real Estate
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
             Sell Luxury, Close Faster — <br />
             <span className="text-gradient-premium">AI-Powered Real Estate Automation</span>
           </h1>
-          <p className="text-lg text-slate-400 mb-8">
+          <p className="text-lg text-slate-300 mb-8">
             From instant lead qualification to personalized follow-ups, we help high-end
             realtors close deals in days, not months.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => openModal("Book Strategy Call", "High-End Real Estate")}
               className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
@@ -33,18 +58,10 @@ export default function HighEndRealEstate() {
             </button>
           </div>
         </div>
-        {/* Right - image */}
-        <div className="hidden lg:block">
-          <img
-            src="/images/luxury-realestate.jpg"
-            alt="Luxury Real Estate"
-            className="rounded-2xl shadow-xl border border-white/10"
-          />
-        </div>
       </section>
 
       {/* Problem & Solution */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12 bg-black">
         {/* Problems */}
         <div>
           <h2 className="text-3xl font-bold mb-6">The Luxury Market Moves Fast — Are You Keeping Up?</h2>
@@ -68,7 +85,7 @@ export default function HighEndRealEstate() {
       </section>
 
       {/* Features */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-black">
         <h2 className="text-3xl font-bold text-center mb-14">Automations Built for Million-Dollar Listings</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
@@ -92,7 +109,7 @@ export default function HighEndRealEstate() {
       </section>
 
       {/* ROI */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-#0A0D10 text-center">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-black">
         <h2 className="text-3xl font-bold mb-6">Turn Leads into Closings — Faster than Ever</h2>
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-slate-300">
           <div>✅ Avg. response time cut from <span className="font-semibold text-white">24 hrs</span> to <span className="font-semibold text-white">under 2 mins</span></div>
@@ -102,7 +119,7 @@ export default function HighEndRealEstate() {
       </section>
 
       {/* Pricing */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-black">
         <h2 className="text-3xl font-bold mb-4">Pricing Snapshot</h2>
         <p className="text-slate-400 mb-8">Starting from $1,800 — custom-built for your sales process</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -122,7 +139,7 @@ export default function HighEndRealEstate() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-#0A0D10">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-black">
         <h2 className="text-3xl font-bold mb-4">Your next closing is just one automation away.</h2>
         <button
           onClick={() => openModal("Book Strategy Call", "High-End Real Estate")}

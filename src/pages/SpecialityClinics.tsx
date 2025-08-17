@@ -1,3 +1,4 @@
+import React from "react";
 import { useModal } from "../contexts/ModalContext";
 import { Sparkles, CheckCircle, XCircle, ArrowRight, ClipboardList, Calendar, HeartPulse, Lock } from "lucide-react";
 
@@ -6,10 +7,32 @@ export default function SpecialityClinics() {
 
   return (
     <div className="bg-[#0A0D10] text-white">
+      {/* Hero with Background Video */}
+      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Desktop Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        >
+          <source src="/PagesAnimation.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Mobile Fallback Image */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center md:hidden"
+          style={{ backgroundImage: "url('/realestate-fallback.jpg')" }}
+        />
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
+        
       {/* Hero */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left */}
-        <div className="text-center lg:text-left">
+      <div className="relative z-10 text-center max-w-3xl px-6">
+        
           <div className="inline-flex items-center bg-black/20 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
             <Sparkles className="h-4 w-4 text-cyan-400 mr-2" /> AI Automation for Specialty Clinics
           </div>
@@ -37,18 +60,10 @@ export default function SpecialityClinics() {
             </button>
           </div>
         </div>
-        {/* Right - image */}
-        <div className="hidden lg:block">
-          <img
-            src="/images/clinic-modern.jpg"
-            alt="Specialty Clinic"
-            className="rounded-2xl shadow-xl border border-white/10"
-          />
-        </div>
       </section>
 
       {/* Problem & Solution */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 grid lg:grid-cols-2 gap-12 bg-black">
         {/* Problems */}
         <div>
           <h2 className="text-3xl font-bold mb-6">The Challenge</h2>
@@ -70,7 +85,7 @@ export default function SpecialityClinics() {
       </section>
 
       {/* Features */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-#0A0D10">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-black">
         <h2 className="text-3xl font-bold text-center mb-14">What We Automate</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
@@ -92,7 +107,7 @@ export default function SpecialityClinics() {
       </section>
 
       {/* Results */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-#0A0D10 text-center">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 bg-black text-center">
         <h2 className="text-3xl font-bold mb-6">Real Results</h2>
         <blockquote className="text-xl italic text-slate-300 mb-6">
           “Our front desk was drowning in calls — now patients schedule and confirm automatically.
@@ -107,7 +122,7 @@ export default function SpecialityClinics() {
       </section>
 
       {/* Pricing Snapshot */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-#0A0D10">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-black">
         <h2 className="text-3xl font-bold mb-4">Pricing Snapshot</h2>
         <p className="text-slate-400 mb-8">All solutions delivered within 72 hours</p>
         <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -126,7 +141,7 @@ export default function SpecialityClinics() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-#0A0D10">
+      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-20 text-center bg-black">
         <h2 className="text-3xl font-bold mb-4">Free up your staff. Improve patient outcomes. Keep your schedule full.</h2>
         <button
           onClick={() => openModal("Strategy Call – Specialty Clinic")}
