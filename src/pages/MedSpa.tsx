@@ -11,6 +11,7 @@ import {
   Gift,
   Link2,
   Shield,
+  ArrowRight,
   Star,
 } from "lucide-react";
 import { useModal } from "../contexts/ModalContext";
@@ -18,10 +19,47 @@ import { useModal } from "../contexts/ModalContext";
 const MedSpa: React.FC = () => {
   const { openModal } = useModal();
 
+  // Smooth scroll helper
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+
+  const medspaPlans = [
+    {
+      title: "Starter Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,000",
+      monthly: "$500/mo",
+      desc: "Perfect for Med Spas looking to capture every lead instantly and reduce no-shows. Automates one core workflow like appointment reminders or lead follow-ups, so you can focus on high-value treatments.",
+      source: "MedSpa - Starter Automation"
+    },
+    {
+      title: "Advanced Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,800",
+      monthly: "$800/mo",
+      desc: "Multi-step, multi-channel workflows for growing Med Spas. Automate post-visit follow-ups, loyalty campaigns, and VIP client nurture flows to increase retention and repeat bookings.",
+      source: "MedSpa - Advanced Automation"
+    },
+    {
+      title: "Custom VIP Flows",
+      badge: "4–7 DAYS DELIVERY",
+      price: "$2,000",
+      monthly: "$1,000/mo",
+      desc: "Fully customized AI automation for luxury Med Spas. Handle lead capture, follow-ups, scheduling, and personalized client experiences — all automated to run smoothly while you focus on high-value services.",
+      source: "MedSpa - Custom VIP Flows"
+    }
+  ];
+  
+
   return (
     <div className="bg-[#0A0D10] text-white">
       {/* ========== HERO (with background video) ========== */}
-      <section className="relative w-full h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full md:h-[95vh] h-[140vh] flex items-center justify-center overflow-hidden">
         {/* Background Video / Fallback */}
         <video
           autoPlay
@@ -40,6 +78,7 @@ const MedSpa: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl px-6">
+          
           {/* Badge */}
           <div className="inline-flex items-center bg-black/30 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
             <Sparkles className="h-4 w-4 text-cyan-400 mr-2" />
@@ -62,21 +101,24 @@ const MedSpa: React.FC = () => {
             eliminate wasted admin time, reduce no-shows, and deliver the{" "}
             <em>luxurious experience your clients expect</em>.
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => openModal("Book Strategy Call", "hero")}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl 
-                         font-semibold shadow-lg hover:shadow-cyan-500/25 border border-white/10
-                         transition-all duration-700 ease-out hover:scale-105"
+            {/* Book Call Button */}
+            <a
+              href="https://calendly.com/atharv-solrynhq/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center space-x-3"
             >
-              Book Strategy Call
-            </button>
+              <ArrowRight className="h-5 w-5" />
+              <span>Book Strategy Call</span>
+            </a>
 
+            {/* View Packages Button */}
             <button
-              onClick={() => openModal("Pricing", "hero")}
+              onClick={() => scrollToSection("pricing")}
               className="border border-cyan-500 text-cyan-400 px-8 py-4 rounded-xl 
-                         font-semibold hover:bg-cyan-500/10 transition-all duration-700 ease-out hover:scale-105"
+                        font-semibold hover:bg-cyan-500/10 transition-all duration-700 ease-out hover:scale-105"
             >
               View Automation Packages
             </button>
@@ -319,7 +361,7 @@ const MedSpa: React.FC = () => {
       </section>
 
       {/* ========== PRICING ========== */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-24 bg-black text-center">
+      <section id="pricing" className="px-6 sm:px-12 md:px-16 lg:px-24 py-24 bg-black text-center">
         {/* Badge */}
         <div className="inline-flex items-center bg-black/30 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
           <Star className="h-4 w-4 text-cyan-400 mr-2" />
@@ -336,47 +378,36 @@ const MedSpa: React.FC = () => {
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              name: "Starter Automation",
-              price: "$1,000 setup + $500/mo",
-              desc:
-                "Perfect for Med Spas looking to eliminate no-shows and capture every lead instantly.",
-              source: "Starter Automation",
-            },
-            {
-              name: "Advanced Automation",
-              price: "$1,800 setup + $800/mo",
-              desc:
-                "For growing Med Spas ready to add multi-channel nurture campaigns and client loyalty flows.",
-              source: "Advanced Automation",
-            },
-            {
-              name: "Custom VIP Flows",
-              price: "$2,000 setup + $1,000/mo",
-              desc:
-                "A fully tailored system for Med Spas who want every part of the client journey automated and elevated.",
-              source: "Custom VIP Flows",
-            },
-          ].map((plan, idx) => (
-            <div key={idx} className="relative group">
-              <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-0 transition-opacity duration-700 ease-out blur-lg bg-gradient-to-r from-cyan-500 to-emerald-500" />
-              <div className="relative p-8 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md 
-                              hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
-                <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                <p className="text-cyan-400 font-bold mb-4">{plan.price}</p>
-                <p className="text-slate-300 mb-6">{plan.desc}</p>
+
+            {medspaPlans.map((plan, index) => (
+              <div
+                key={index}
+                className="glass-morphism rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:scale-105 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="mb-4">
+                    <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                      {plan.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-white mb-4">{plan.title}</h3>
+                  <p className="text-slate-400 mb-6">{plan.desc}</p>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    {plan.monthly && (
+                      <span className="block text-slate-400 text-sm mt-1">{plan.monthly} (optional)</span>
+                    )}
+                  </div>
+                </div>
                 <button
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
-                             hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-                  onClick={() => openModal(plan.source, "pricing")}
+                  onClick={() => openModal(plan.title, plan.source)} // ✅ passes correct source
+                  className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg mt-4"
                 >
-                  Get Started
+                  Request Quote
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
         <p className="mt-12 text-slate-400">
           Each package is designed to deliver ROI in weeks, not months.
@@ -408,10 +439,13 @@ const MedSpa: React.FC = () => {
 
         <button
           className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
-                     hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-          onClick={() => openModal("Final CTA", "footer")}
-        >
-          Book My Free Strategy Call →
+                     hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10">
+          <div className="flex items-center space-x-3">
+            <ArrowRight className="h-5 w-5" />
+            <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+              <button>Book Strategy Call</button>
+            </a>
+          </div> 
         </button>
       </section>
     </div>

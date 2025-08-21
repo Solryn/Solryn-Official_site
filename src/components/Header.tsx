@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useModal } from '../contexts/ModalContext';
 import { Link } from 'react-router-dom';
-import React from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

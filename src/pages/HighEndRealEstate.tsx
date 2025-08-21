@@ -20,10 +20,38 @@ import { useModal } from "../contexts/ModalContext";
 const HighEndRealEstate: React.FC = () => {
   const { openModal } = useModal();
 
+  const realEstatePlans = [
+  {
+    title: "Starter Automation",
+    badge: "72 HRS DELIVERY",
+    price: "$1,800",
+    monthly: "$800/mo",
+    desc: "Instant lead capture and automated follow-ups for every property inquiry. Never lose a hot lead and respond faster than the competition.",
+    source: "Real Estate - Starter Automation"
+  },
+  {
+    title: "Advanced Automation",
+    badge: "72 HRS DELIVERY",
+    price: "$2,500",
+    monthly: "$1,000/mo",
+    desc: "Multi-step workflows for high-value property sales. Automate showing schedules, client reminders, and pipeline updates, so your team can focus on closing deals.",
+    source: "Real Estate - Advanced Automation"
+  },
+  {
+    title: "Premium AI System",
+    badge: "4–7 DAYS DELIVERY",
+    price: "$4,000",
+    monthly: "$1,800/mo",
+    desc: "Complete AI-powered real estate assistant. Handles inquiries, schedules showings, follows up automatically, and manages your CRM 24/7.",
+    source: "Real Estate - Premium AI System"
+  }
+];
+
+
   return (
     <div className="bg-[#0A0D10] text-white">
       {/* ========== HERO (with background video) ========== */}
-      <section className="relative w-full h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full md:h-[95vh] h-[150vh] flex items-center justify-center overflow-hidden">
         {/* Background Video / Fallback */}
         <video
           autoPlay
@@ -67,14 +95,18 @@ const HighEndRealEstate: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => openModal("Book My Free Strategy Call", "hero")}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl 
-                         font-semibold shadow-lg hover:shadow-cyan-500/25 border border-white/10
-                         transition-all duration-700 ease-out hover:scale-105"
+          <button 
+              
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex flex-col items-center"
             >
-              Book My Free Strategy Call
+              <div className="flex items-center space-x-3">
+                <ArrowRight className="h-5 w-5" />
+                <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+                  <button>Book Strategy Call</button>
+                </a>
+              </div>              
             </button>
+
 
             <button
               onClick={() => openModal("Get My Free Automation Blueprint", "hero")}
@@ -281,43 +313,35 @@ const HighEndRealEstate: React.FC = () => {
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              name: "Starter Automation",
-              price: "$1,800 + $800/mo",
-              desc: "Perfect for solo agents ready to scale. Covers instant lead response and basic nurture.",
-            },
-            {
-              name: "Advanced Automation",
-              price: "$2,500 + $1,200/mo",
-              desc: "Multi-channel nurture campaigns, CRM sync, and scheduling automation.",
-            },
-            {
-              name: "VIP Concierge Systems",
-              price: "$5,000 + $2,000/mo",
-              desc: "End-to-end luxury automation flows, concierge-style AI, and custom white-glove setup for elite brokerages.",
-            },
-          ].map((plan, idx) => (
-            <div key={idx} className="relative group">
-              <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-0 transition-opacity duration-700 ease-out blur-lg bg-gradient-to-r from-cyan-500 to-emerald-500" />
+        {realEstatePlans.map((plan, index) => (
               <div
-                className="relative p-8 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md
-                            hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
+                key={index}
+                className="glass-morphism rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:scale-105 flex flex-col justify-between"
               >
-                <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                <p className="text-cyan-400 font-bold mb-4">{plan.price}</p>
-                <p className="text-slate-300 mb-6">{plan.desc}</p>
+                <div>
+                  <div className="mb-4">
+                    <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                      {plan.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-white mb-4">{plan.title}</h3>
+                  <p className="text-slate-400 mb-6">{plan.desc}</p>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    {plan.monthly && (
+                      <span className="block text-slate-400 text-sm mt-1">{plan.monthly} (optional)</span>
+                    )}
+                  </div>
+                </div>
                 <button
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
-                             hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-                  onClick={() => openModal(plan.name, "pricing")}
+                  onClick={() => openModal(plan.title, plan.source)} // ✅ passes correct source
+                  className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg mt-4"
                 >
-                  Book Strategy Call
+                  Request Quote
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
         <p className="mt-12 text-slate-400">Most clients recoup their investment within 60 days.</p>
       </section>
@@ -342,9 +366,13 @@ const HighEndRealEstate: React.FC = () => {
         <button
           className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
                      hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-          onClick={() => openModal("Book Your Free Automation Blueprint", "footer")}
-        >
-          Book Your Free Automation Blueprint <ArrowRight className="ml-2 inline-block h-5 w-5" />
+          onClick={() => openModal("Book Your Free Automation Blueprint", "footer")}  >
+          <div className="flex items-center space-x-3">
+            <ArrowRight className="h-5 w-5" />
+            <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+              <button>Book Strategy Call</button>
+            </a>
+              </div>              
         </button>
       </section>
     </div>

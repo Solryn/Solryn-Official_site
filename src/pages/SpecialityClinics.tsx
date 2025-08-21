@@ -14,6 +14,7 @@ import {
   MessageSquare,
   BarChart3,
   ShieldCheck,
+  ArrowRight,
   FileCheck
 } from "lucide-react";
 import { useModal } from "../contexts/ModalContext";
@@ -21,11 +22,48 @@ import { useModal } from "../contexts/ModalContext";
 const SpecialityClinics: React.FC = () => {
   const { openModal } = useModal();
 
+  // Smooth scroll helper
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
+  const specialtyClinicPlans = [
+    {
+      title: "Starter Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,000",
+      monthly: "$500/mo",
+      desc: "Automate one core workflow, like patient intake forms, appointment reminders, or follow-ups. Quick ROI with less admin burden, delivered in 72 hours.",
+      source: "Specialty Clinics - Starter Automation"
+    },
+    {
+      title: "Advanced Automation",
+      badge: "72 HRS DELIVERY",
+      price: "$1,800",
+      monthly: "$800/mo",
+      desc: "Multi-step workflows for patient engagement, reminders, and treatment follow-ups. Keep patients informed and appointments on schedule without extra staff time.",
+      source: "Specialty Clinics - Advanced Automation"
+    },
+    {
+      title: "Custom AI System",
+      badge: "4–7 DAYS DELIVERY",
+      price: "$2,500",
+      monthly: "$1,200/mo",
+      desc: "Fully tailored AI automation for specialty clinics. Handle patient inquiries, appointment scheduling, follow-ups, and personalized care reminders — all automated to run smoothly.",
+      source: "Specialty Clinics - Custom AI System"
+    }
+  ];
+  
+
   return (
     <div className="bg-[#0A0D10] text-white">
       
       {/* ========== HERO (with background video) ========== */}
-      <section className="relative w-full h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full md:h-[100vh] h-[135vh] flex items-center justify-center overflow-hidden">
         {/* Background Video / Fallback */}
         <video
           autoPlay
@@ -56,28 +94,32 @@ const SpecialityClinics: React.FC = () => {
 
           <p className="text-lg text-slate-300 mb-8">
             In healthcare, trust isn’t optional — it’s everything. Patients don’t just judge you by the treatment they receive; they judge you by how fast you respond, how clear your communication is, and how seamless their experience feels.
-            <br></br>
+            <br></br><br></br>
             But in most specialty clinics, overwhelmed staff miss calls, paperwork piles up, and referrals slip through the cracks. The result? Patients don’t come back, new patients go elsewhere, and your clinic’s reputation suffers.
             <br></br><br></br>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => openModal("Book a Demo", "hero")}
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl 
-                         font-semibold shadow-lg hover:shadow-cyan-500/25 border border-white/10
-                         transition-all duration-700 ease-out hover:scale-105"
+          <button 
+              
+              className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex flex-col items-center"
             >
-              Book a Demo
+              <div className="flex items-center space-x-3">
+                <ArrowRight className="h-5 w-5" />
+                <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+                  <button>Book Strategy Call</button>
+                </a>
+              </div>              
             </button>
 
+
             <button
-              onClick={() => openModal("See How It Works", "hero")}
+              onClick={() => scrollToSection("solution")}
               className="border border-cyan-500 text-cyan-400 px-8 py-4 rounded-xl 
-                         font-semibold hover:bg-cyan-500/10 transition-all duration-700 ease-out hover:scale-105"
-            >
-              See How It Works
+                        font-semibold hover:bg-cyan-500/10 transition-all duration-700 ease-out hover:scale-105"  >
+              Explore Solutions
             </button>
+
           </div>
         </div>
       </section>
@@ -102,7 +144,7 @@ const SpecialityClinics: React.FC = () => {
         </p>
 
         {/* Pain points as glow cards */}
-        <div className="grid md:grid-cols-2 text-xl lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 text-lg lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {[
             { icon: PhoneMissed, title: "Missed Calls = Missed Trust", text: "Patients expect healthcare to be responsive. One ignored call is often enough to choose a competitor." },
             { icon: FileText, title: "Paperwork Overload", text: "Highly-trained staff spend half their day chasing forms, verifying insurance, and juggling reminders — not delivering care." },
@@ -118,7 +160,7 @@ const SpecialityClinics: React.FC = () => {
                                 hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 text-left min-h-[160px] ">
                   <Icon className="h-6 w-6 text-cyan-400 mb-3" />
                   <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-slate-300 text-lg">{item.text}</p>
+                  <p className="text-slate-300 text-sm">{item.text}</p>
                 </div>
               </div>
             );
@@ -131,7 +173,7 @@ const SpecialityClinics: React.FC = () => {
       </section>
 
       {/* ========== SOLUTION ========== */}
-      <section className="px-6 sm:px-12 md:px-16 lg:px-24 py-24 bg-black text-center">
+      <section id="solution" className="px-6 sm:px-12 md:px-16 lg:px-24 py-24 bg-black text-center">
         {/* Badge */}
         <div className="inline-flex items-center bg-black/30 border border-white/10 rounded-full px-4 py-2 mb-6 text-slate-300 text-sm">
           <Zap className="h-4 w-4 text-cyan-400 mr-2" />
@@ -153,7 +195,7 @@ const SpecialityClinics: React.FC = () => {
         </p>
 
         {/* Feature cards (glow) */}
-        <div className="grid md:grid-cols-2 text-xl lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 text-lg lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
             { icon: Calendar, title: "Smart Intake & Scheduling", desc: "AI assistants handle phone, chat, text, or WhatsApp — scheduling patients instantly, with zero double-bookings." },
             { icon: Share2, title: "Referral Management", desc: "Every referral logged, tracked, and confirmed automatically. Patients never slip away silently." },
@@ -170,7 +212,7 @@ const SpecialityClinics: React.FC = () => {
                                 hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 text-left min-h-[200px]">
                   <Icon className="h-7 w-7 text-cyan-400 mb-4" />
                   <h3 className="font-semibold mb-2">{f.title}</h3>
-                  <p className="text-slate-300 text-lg">{f.desc}</p>
+                  <p className="text-slate-300 text-sm">{f.desc}</p>
                 </div>
               </div>
             );
@@ -210,7 +252,7 @@ const SpecialityClinics: React.FC = () => {
                 <div className="relative p-8 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md 
                                 hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 text-left min-h-[160px]">
                   <Icon className="h-7 w-7 text-cyan-400 mb-4" />
-                  <p className="text-slate-300 text-lg">{f.text}</p>
+                  <p className="text-slate-300 text-sm">{f.text}</p>
                 </div>
               </div>
             );
@@ -245,8 +287,8 @@ const SpecialityClinics: React.FC = () => {
               <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-0 transition-opacity duration-700 ease-out blur-lg bg-gradient-to-r from-cyan-500 to-emerald-500" />
               <div className="relative p-8 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md 
                               hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 text-left ">
-                <h3 className="text-xl font-semibold mb-2">{c.title}</h3>
-                <p className="text-slate-300 text-lg">{c.desc}</p>
+                <h3 className="text-lg font-semibold mb-2">{c.title}</h3>
+                <p className="text-slate-300 text-sm">{c.desc}</p>
               </div>
             </div>
           ))}
@@ -276,47 +318,35 @@ const SpecialityClinics: React.FC = () => {
         
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              name: "Starter Automation",
-              price: "$1,000 setup + $500/mo",
-              desc:
-                "Perfect for single-specialty practices looking to eliminate missed calls and automate scheduling.",
-              source: "Starter Automation",
-            },
-            {
-              name: "Advanced Automation",
-              price: "$1,800 setup + $800/mo",
-              desc:
-                "For multi-provider clinics who need referral tracking, insurance workflows, and patient recall campaigns.",
-              source: "Advanced Automation",
-            },
-            {
-              name: "Custom VIP Flows",
-              price: "$2,000 setup + $1,000/mo",
-              desc:
-                "For networks and high-volume clinics requiring end-to-end patient engagement, compliance automation, and advanced analytics.",
-              source: "Custom VIP Flows",
-            },
-          ].map((plan, idx) => (
-            <div key={idx} className="relative group">
-              <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-0 transition-opacity duration-700 ease-out blur-lg bg-gradient-to-r from-cyan-500 to-emerald-500" />
-              <div className="relative p-8 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md 
-                              hover:border-cyan-500/40 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
-                <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                <p className="text-cyan-400 font-bold mb-4">{plan.price}</p>
-                <p className="text-slate-300 mb-6">{plan.desc}</p>
+        {specialtyClinicPlans.map((plan, index) => (
+              <div
+                key={index}
+                className="glass-morphism rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:scale-105 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="mb-4">
+                    <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                      {plan.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-white mb-4">{plan.title}</h3>
+                  <p className="text-slate-400 mb-6">{plan.desc}</p>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    {plan.monthly && (
+                      <span className="block text-slate-400 text-sm mt-1">{plan.monthly} (optional)</span>
+                    )}
+                  </div>
+                </div>
                 <button
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
-                             hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-                  onClick={() => openModal(plan.source, "pricing")}
+                  onClick={() => openModal(plan.title, plan.source)} // ✅ passes correct source
+                  className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-400 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 shadow-lg mt-4"
                 >
-                  Get Started
+                  Request Quote
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
         <p className="mt-12 text-slate-400">
           Each package is designed to deliver ROI in weeks, not months.
@@ -341,10 +371,14 @@ const SpecialityClinics: React.FC = () => {
 
         <button
           className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
-                     hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-          onClick={() => openModal("Book a strategy call", "Speciality-Clinic-CTA")}
-        >
-          Book a Strategy Call
+                     hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10" >
+         
+              <div className="flex items-center space-x-3">
+                <ArrowRight className="h-5 w-5" />
+                <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
+                  <button>Book Strategy Call</button>
+                </a>
+              </div>              
         </button>
       </section>
     </div>
