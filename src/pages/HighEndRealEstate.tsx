@@ -366,7 +366,7 @@ const HighEndRealEstate: React.FC = () => {
         <button
           className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold
                      hover:shadow-cyan-500/25 transition-all duration-700 ease-out hover:scale-105 border border-white/10"
-          onClick={() => openModal("Book Your Free Automation Blueprint", "footer")}  >
+        >
           <div className="flex items-center space-x-3">
             <ArrowRight className="h-5 w-5" />
             <a href="https://calendly.com/atharv-solrynhq/30min" target="_blank" rel="noopener noreferrer">
