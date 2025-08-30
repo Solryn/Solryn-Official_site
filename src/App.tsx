@@ -47,9 +47,13 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/MedSpa" element={<MedSpa />} />
-          <Route path="/SpecialityClinics" element={<SpecialityClinics />} />
-          <Route path="/HighEndRealEstate" element={<HighEndRealEstate />} />
+          {/* Use lowercase paths for clean URLs */}
+          <Route path="/medspa" element={<MedSpa />} />
+          <Route path="/speciality-clinics" element={<SpecialityClinics />} />
+          <Route path="/real-estate" element={<HighEndRealEstate />} />
+
+          {/* Catch-all fallback */}
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <ChatbotWidget />
       </div>
